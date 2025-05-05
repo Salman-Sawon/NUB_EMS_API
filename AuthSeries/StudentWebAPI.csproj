@@ -1,0 +1,350 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\ViewModel\NewFolder1\**" />
+    <Content Remove="Models\ViewModel\NewFolder1\**" />
+    <EmbeddedResource Remove="Models\ViewModel\NewFolder1\**" />
+    <None Remove="Models\ViewModel\NewFolder1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Reports\AcademicCalendarReport.vsrepx" />
+    <None Remove="Reports\AllStudentTranscriptReport.vsrepx" />
+    <None Remove="Reports\ClassSectionWiseAllReport.vsrepx" />
+    <None Remove="Reports\CollectionPaySlipReport.vsrepx" />
+    <None Remove="Reports\DailyTransCollDeleteReport.vsrepx" />
+    <None Remove="Reports\DayWiseBillCollectionReport.vsrepx" />
+    <None Remove="Reports\DaywiseFeeCollectionDetailsReport.vsrepx" />
+    <None Remove="Reports\DayWiseFeeTypeDetailsReport.vsrepx" />
+    <None Remove="Reports\ExamRoutineNewReportx.vsrepx" />
+    <None Remove="Reports\ExamRoutineReportNew.vsrepx" />
+    <None Remove="Reports\FeeBillCollectionDTLReport.vsrepx" />
+    <None Remove="Reports\FeeTypeReport.vsrepx" />
+    <None Remove="Reports\Fee\ClassWiseBillCollectionReport.vsrepx" />
+    <None Remove="Reports\GLReports\DailyTransCollectionGLReportsvsrepx.vsrepx" />
+    <None Remove="Reports\GLReports\TransCRCollectionReport.vsrepx" />
+    <None Remove="Reports\GLReports\TransDRCollectionDeleteReport.vsrepx" />
+    <None Remove="Reports\LedgerReport.vsrepx" />
+    <None Remove="Reports\LEDGER\LedgerRepReport.vsrepx" />
+    <None Remove="Reports\Online Admission\StdColDtlOnlineAdmissionReport.vsrepx" />
+    <None Remove="Reports\OnlineAdmissionFormReport.vsrepx" />
+    <None Remove="Reports\StudentAdmissionFormReport.vsrepx" />
+    <None Remove="Reports\StudentAllInfoListNewReport.vsrepx" />
+    <None Remove="Reports\StudentAllInfoReport.vsrepx" />
+    <None Remove="Reports\StudentAttendanceReport.vsrepx" />
+    <None Remove="Reports\StudentBillVoucherCurReport.vsrepx" />
+    <None Remove="Reports\StudentDailyFeeCollectionReport.vsrepx" />
+    <None Remove="Reports\StudentFeeCollectionDTLReport.vsrepx" />
+    <None Remove="Reports\StudentInfoReport.vsrepx" />
+    <None Remove="Reports\StudentListReport.vsrepx" />
+    <None Remove="Reports\StudentWiseCollectionReport.vsrepx" />
+    <None Remove="Reports\StudentWiseDueWithRemarksReport.vsrepx" />
+    <None Remove="Reports\student\StduCollReport.vsrepx" />
+    <None Remove="Reports\TeacherAttendanceReport.vsrepx" />
+    <None Remove="Reports\TeacherInfoReport.vsrepx" />
+    <None Remove="Reports\TeacherListReport.vsrepx" />
+    <None Remove="Reports\XtraReport1.vsrepx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\AllStudentTranscriptReport.vsrepx" />
+    <EmbeddedResource Include="Reports\ClassSectionWiseAllReport.vsrepx" />
+    <EmbeddedResource Include="Reports\CollectionPaySlipReport.vsrepx" />
+    <EmbeddedResource Include="Reports\DailyTransCollDeleteReport.vsrepx" />
+    <EmbeddedResource Include="Reports\DayWiseBillCollectionReport.vsrepx" />
+    <EmbeddedResource Include="Reports\DaywiseFeeCollectionDetailsReport.vsrepx" />
+    <EmbeddedResource Include="Reports\DayWiseFeeTypeDetailsReport.vsrepx" />
+    <EmbeddedResource Include="Reports\ExamRoutineNewReportx.vsrepx" />
+    <EmbeddedResource Include="Reports\ExamRoutineReportNew.vsrepx" />
+    <EmbeddedResource Include="Reports\FeeBillCollectionDTLReport.vsrepx" />
+    <EmbeddedResource Include="Reports\FeeTypeReport.vsrepx" />
+    <EmbeddedResource Include="Reports\Fee\ClassWiseBillCollectionReport.vsrepx" />
+    <EmbeddedResource Include="Reports\GLReports\DailyTransCollectionGLReportsvsrepx.vsrepx" />
+    <EmbeddedResource Include="Reports\GLReports\TransCRCollectionReport.vsrepx" />
+    <EmbeddedResource Include="Reports\GLReports\TransDRCollectionDeleteReport.vsrepx" />
+    <EmbeddedResource Include="Reports\LedgerReport.vsrepx" />
+    <EmbeddedResource Include="Reports\LEDGER\LedgerRepReport.vsrepx" />
+    <EmbeddedResource Include="Reports\Online Admission\StdColDtlOnlineAdmissionReport.vsrepx" />
+    <EmbeddedResource Include="Reports\OnlineAdmissionFormReport.vsrepx" />
+    <EmbeddedResource Include="Reports\StudentAdmissionFormReport.vsrepx" />
+    <EmbeddedResource Include="Reports\StudentAllInfoListNewReport.vsrepx" />
+    <EmbeddedResource Include="Reports\StudentAllInfoReport.vsrepx" />
+    <EmbeddedResource Include="Reports\StudentAttendanceReport.vsrepx" />
+    <EmbeddedResource Include="Reports\StudentBillVoucherCurReport.vsrepx" />
+    <EmbeddedResource Include="Reports\StudentDailyFeeCollectionReport.vsrepx" />
+    <EmbeddedResource Include="Reports\StudentFeeCollectionDTLReport.vsrepx" />
+    <EmbeddedResource Include="Reports\StudentInfoReport.vsrepx" />
+    <EmbeddedResource Include="Reports\StudentListReport.vsrepx" />
+    <EmbeddedResource Include="Reports\StudentWiseCollectionReport.vsrepx" />
+    <EmbeddedResource Include="Reports\StudentWiseDueWithRemarksReport.vsrepx" />
+    <EmbeddedResource Include="Reports\student\StduCollReport.vsrepx" />
+    <EmbeddedResource Include="Reports\TeacherAttendanceReport.vsrepx" />
+    <EmbeddedResource Include="Reports\TeacherInfoReport.vsrepx" />
+    <EmbeddedResource Include="Reports\TeacherListReport.vsrepx" />
+    <EmbeddedResource Include="Reports\XtraReport1.vsrepx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocX" Version="2.5.0" />
+    <PackageReference Include="EPPlus" Version="6.2.4" />
+    <PackageReference Include="FirebaseAdmin" Version="3.1.0" />
+    <PackageReference Include="GeoCoordinate.NetCore" Version="1.0.0.1" />
+    <PackageReference Include="Google.Apis.Drive.v3" Version="1.50.0.2265" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.10" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.6.0" />
+    <PackageReference Include="MimeKit" Version="4.10.0" />
+    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.130" />
+    <PackageReference Include="Polybioz.HtmlRenderer.PdfSharp.Core" Version="1.0.0" />
+    <PackageReference Include="QRCoder" Version="1.6.0" />
+    <PackageReference Include="RestSharp" Version="112.1.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="7.0.1" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="Spire.Office" Version="8.9.3" />
+    <PackageReference Include="Spire.PDF" Version="9.7.17" />
+    <PackageReference Include="StackExchange.Redis" Version="2.7.27" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="System.CodeDom" Version="7.0.0" />
+    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
+    <PackageReference Include="System.IO.Compression.ZipFile" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DevExpress.AspNetCore.Common.v21.1">
+      <HintPath>Lib\DevExpress.AspNetCore.Common.v21.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.AspNetCore.Core.v21.1">
+      <HintPath>Lib\DevExpress.AspNetCore.Core.v21.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.AspNetCore.Reporting.v21.1">
+      <HintPath>Lib\DevExpress.AspNetCore.Reporting.v21.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.AspNetCore.Resources.v21.1">
+      <HintPath>Lib\DevExpress.AspNetCore.Resources.v21.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v21.1.Core">
+      <HintPath>Lib\DevExpress.Charts.v21.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v21.1">
+      <HintPath>Lib\DevExpress.Data.v21.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v21.1">
+      <HintPath>Lib\DevExpress.DataAccess.v21.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v21.1.Core">
+      <HintPath>Lib\DevExpress.Office.v21.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v21.1.Core">
+      <HintPath>Lib\DevExpress.Printing.v21.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v21.1">
+      <HintPath>Lib\DevExpress.Xpo.v21.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v21.1">
+      <HintPath>Lib\DevExpress.XtraReports.v21.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v21.1.Web">
+      <HintPath>Lib\DevExpress.XtraReports.v21.1.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Reports\AcademicCalendarReport.vsrepx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Reports\AllStudentTranscriptReport.cs">
+      <DependentUpon>AllStudentTranscriptReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\AllStudentTranscriptReport.Designer.cs">
+      <DependentUpon>AllStudentTranscriptReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\ClassSectionWiseAllReport.cs">
+      <DependentUpon>ClassSectionWiseAllReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\ClassSectionWiseAllReport.Designer.cs">
+      <DependentUpon>ClassSectionWiseAllReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\CollectionPaySlipReport.cs">
+      <DependentUpon>CollectionPaySlipReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\CollectionPaySlipReport.Designer.cs">
+      <DependentUpon>CollectionPaySlipReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\DailyTransCollDeleteReport.cs">
+      <DependentUpon>DailyTransCollDeleteReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\DailyTransCollDeleteReport.Designer.cs">
+      <DependentUpon>DailyTransCollDeleteReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\DayWiseBillCollectionReport.cs">
+      <DependentUpon>DayWiseBillCollectionReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\DayWiseBillCollectionReport.Designer.cs">
+      <DependentUpon>DayWiseBillCollectionReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\DaywiseFeeCollectionDetailsReport.cs">
+      <DependentUpon>DaywiseFeeCollectionDetailsReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\DaywiseFeeCollectionDetailsReport.Designer.cs">
+      <DependentUpon>DaywiseFeeCollectionDetailsReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\DayWiseFeeTypeDetailsReport.cs">
+      <DependentUpon>DayWiseFeeTypeDetailsReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\DayWiseFeeTypeDetailsReport.Designer.cs">
+      <DependentUpon>DayWiseFeeTypeDetailsReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\ExamRoutineNewReportx.cs">
+      <DependentUpon>ExamRoutineNewReportx.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\ExamRoutineNewReportx.Designer.cs">
+      <DependentUpon>ExamRoutineNewReportx.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\FeeBillCollectionDTLReport.cs">
+      <DependentUpon>FeeBillCollectionDTLReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\FeeBillCollectionDTLReport.Designer.cs">
+      <DependentUpon>FeeBillCollectionDTLReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\FeeTypeReport.cs">
+      <DependentUpon>FeeTypeReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\FeeTypeReport.Designer.cs">
+      <DependentUpon>FeeTypeReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Fee\ClassWiseBillCollectionReport.cs">
+      <DependentUpon>ClassWiseBillCollectionReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Fee\ClassWiseBillCollectionReport.Designer.cs">
+      <DependentUpon>ClassWiseBillCollectionReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\GLReports\DailyTransCollectionGLReportsvsrepx.cs">
+      <DependentUpon>DailyTransCollectionGLReportsvsrepx.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\GLReports\DailyTransCollectionGLReportsvsrepx.Designer.cs">
+      <DependentUpon>DailyTransCollectionGLReportsvsrepx.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\GLReports\TransCRCollectionReport.cs">
+      <DependentUpon>TransCRCollectionReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\GLReports\TransCRCollectionReport.Designer.cs">
+      <DependentUpon>TransCRCollectionReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\GLReports\TransDRCollectionDeleteReport.cs">
+      <DependentUpon>TransDRCollectionDeleteReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\GLReports\TransDRCollectionDeleteReport.Designer.cs">
+      <DependentUpon>TransDRCollectionDeleteReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\LedgerReport.cs">
+      <DependentUpon>LedgerReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\LedgerReport.Designer.cs">
+      <DependentUpon>LedgerReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\LEDGER\LedgerRepReport.cs">
+      <DependentUpon>LedgerRepReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\LEDGER\LedgerRepReport.Designer.cs">
+      <DependentUpon>LedgerRepReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Online Admission\StdColDtlOnlineAdmissionReport.cs">
+      <DependentUpon>StdColDtlOnlineAdmissionReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Online Admission\StdColDtlOnlineAdmissionReport.Designer.cs">
+      <DependentUpon>StdColDtlOnlineAdmissionReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\OnlineAdmissionFormReport.cs">
+      <DependentUpon>OnlineAdmissionFormReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\OnlineAdmissionFormReport.Designer.cs">
+      <DependentUpon>OnlineAdmissionFormReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentAdmissionFormReport.cs">
+      <DependentUpon>StudentAdmissionFormReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentAdmissionFormReport.Designer.cs">
+      <DependentUpon>StudentAdmissionFormReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentAllInfoListNewReport.cs">
+      <DependentUpon>StudentAllInfoListNewReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentAllInfoListNewReport.Designer.cs">
+      <DependentUpon>StudentAllInfoListNewReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentAllInfoReport.cs">
+      <DependentUpon>StudentAllInfoReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentAllInfoReport.Designer.cs">
+      <DependentUpon>StudentAllInfoReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentBillVoucherCurReport.cs">
+      <DependentUpon>StudentBillVoucherCurReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentBillVoucherCurReport.Designer.cs">
+      <DependentUpon>StudentBillVoucherCurReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentDailyFeeCollectionReport.cs">
+      <DependentUpon>StudentDailyFeeCollectionReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentDailyFeeCollectionReport.Designer.cs">
+      <DependentUpon>StudentDailyFeeCollectionReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentFeeCollectionDTLReport.cs">
+      <DependentUpon>StudentFeeCollectionDTLReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentFeeCollectionDTLReport.Designer.cs">
+      <DependentUpon>StudentFeeCollectionDTLReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentListReport.cs">
+      <DependentUpon>StudentListReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentListReport.Designer.cs">
+      <DependentUpon>StudentListReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentWiseCollectionReport.cs">
+      <DependentUpon>StudentWiseCollectionReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentWiseCollectionReport.Designer.cs">
+      <DependentUpon>StudentWiseCollectionReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentWiseDueWithRemarksReport.cs">
+      <DependentUpon>StudentWiseDueWithRemarksReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\StudentWiseDueWithRemarksReport.Designer.cs">
+      <DependentUpon>StudentWiseDueWithRemarksReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\student\StduCollReport.cs">
+      <DependentUpon>StduCollReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\student\StduCollReport.Designer.cs">
+      <DependentUpon>StduCollReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\TeacherListReport.cs">
+      <DependentUpon>TeacherListReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\TeacherListReport.Designer.cs">
+      <DependentUpon>TeacherListReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\XtraReport1.cs">
+      <DependentUpon>XtraReport1.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.vsrepx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\TeacherFileUpload\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="21.1.5.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="OnlineAdmissionFormReport" Margins="58, 62, 57, 100" PageWidth="850" PageHeight="1100" Version="21.1" DataMember="EUGSC_STD_ONLINE_ADMISSION_DPD_ONLINE_ADMISSION_STUDENT_REPORT" DataSource="#Ref-0" Font="Arial, 9.75pt">
+  <Extensions>
+    <Item1 Ref="2" Key="VSReportExtInfo" Value=".vsrepx" />
+  </Extensions>
+  <Parameters>
+    <Item1 Ref="4" ValueInfo="0" Name="APPLICATION_ID" Type="#Ref-3" />
+    <Item2 Ref="5" ValueInfo="0" Name="SMS_MOBILE_NUM" Type="#Ref-3" />
+  </Parameters>
+  <Bands>
+    <Item1 Ref="6" ControlType="TopMarginBand" Name="TopMargin" HeightF="57" />
+    <Item2 Ref="7" ControlType="BottomMarginBand" Name="BottomMargin" />
+    <Item3 Ref="8" ControlType="DetailBand" Name="Detail" HeightF="3.16655469" />
+    <Item4 Ref="9" ControlType="PageHeaderBand" Name="PageHeader" HeightF="128.666733" Font="Arial, 10.2pt, charSet=0">
+      <Controls>
+        <Item1 Ref="10" ControlType="XRLabel" Name="label90" Multiline="true" Text="Printing Date" TextAlignment="MiddleLeft" SizeF="68.51898,20.166687" LocationFloat="566.501038,85.50005" Font="Arial, 7.8pt, charSet=0" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="11" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="12" ControlType="XRLabel" Name="label89" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,20.166687" LocationFloat="635.02,85.50005" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="13" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="14" ControlType="XRPageInfo" Name="pageInfo3" PageInfo="DateTime" TextFormatString="{0:d MMMM, yyyy}" TextAlignment="MiddleRight" SizeF="88.3134155,20.166687" LocationFloat="641.686768,85.50005" Font="Arial, 7.8pt, charSet=0" ForeColor="Black">
+          <StylePriority Ref="15" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="16" ControlType="XRLabel" Name="label3" Multiline="true" Text="label2" TextAlignment="MiddleCenter" SizeF="450.000031,29.166666" LocationFloat="135,0" Font="Goudy Old Style, 12pt, style=Bold, charSet=0" ForeColor="255,0,192,0" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="17" EventName="BeforePrint" PropertyName="Text" Expression="[ORG_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="18" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="19" ControlType="XRLabel" Name="label4" Multiline="true" Text="label3" TextAlignment="MiddleCenter" SizeF="255.000015,23.8333378" LocationFloat="224.020889,29.166666" Font="Arial Rounded MT Bold, 10.2pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="Transparent">
+          <ExpressionBindings>
+            <Item1 Ref="20" EventName="BeforePrint" PropertyName="Text" Expression="[CAMPUS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="21" UseFont="false" UseForeColor="false" UseBorderColor="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="22" ControlType="XRLabel" Name="label2" Text="Admission Fom" TextAlignment="MiddleCenter" SizeF="217.6109,28.3610039" LocationFloat="242.715424,53.0000038" ForeColor="Honeydew" BackColor="Olive" Borders="All">
+          <StylePriority Ref="23" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="24" ControlType="XRPictureBox" Name="pictureBox1" Sizing="ZoomImage" SizeF="101.666664,91.6666641" LocationFloat="0,0">
+          <ExpressionBindings>
+            <Item1 Ref="25" EventName="BeforePrint" PropertyName="ImageSource" Expression="[DPG_EMS_BILL_GEN_PROCESS_DPD_ORG_IMAGE].[ORG_IMAGE]" />
+          </ExpressionBindings>
+        </Item7>
+      </Controls>
+      <StylePriority Ref="26" UseFont="false" />
+    </Item4>
+    <Item5 Ref="27" ControlType="GroupHeaderBand" Name="GroupHeader1" Level="2" HeightF="109.333267">
+      <Controls>
+        <Item1 Ref="28" ControlType="XRLabel" Name="label15" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="146.439178,22.9999924" LocationFloat="105.833412,24.8617039" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="29" EventName="BeforePrint" PropertyName="Text" Expression="[STUDENT_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="30" UseFont="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="31" ControlType="XRLabel" Name="label13" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="146.439178,22.9999924" LocationFloat="105.833412,1.86169946" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="32" EventName="BeforePrint" PropertyName="Text" Expression="[STUDENT_ID]" />
+          </ExpressionBindings>
+          <StylePriority Ref="33" UseFont="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="34" ControlType="XRLabel" Name="label14" Multiline="true" Text="Student Name" TextAlignment="MiddleLeft" SizeF="97.1664658,22.9995975" LocationFloat="2.00019836,24.8617039" Font="Poppins, 9pt, charSet=0" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="35" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="36" ControlType="XRLabel" Name="label12" Multiline="true" Text="Student ID" TextAlignment="MiddleLeft" SizeF="97.1664658,24.8616028" LocationFloat="2.00019836,0" Font="Poppins, 9pt, charSet=0" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="37" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="38" ControlType="XRLabel" Name="label27" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="602.739258,47.86171" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="39" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="40" ControlType="XRLabel" Name="label28" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="602.7394,24.8617039" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="41" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="42" ControlType="XRLabel" Name="label29" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,24.8617039" LocationFloat="602.739258,0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="43" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item7>
+        <Item8 Ref="44" ControlType="XRLabel" Name="label23" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="338.4387,47.8616829" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="45" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item8>
+        <Item9 Ref="46" ControlType="XRLabel" Name="label25" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="338.4387,24.8617039" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="47" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item9>
+        <Item10 Ref="48" ControlType="XRLabel" Name="label26" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="338.4387,1.861674" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="49" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item10>
+        <Item11 Ref="50" ControlType="XRLabel" Name="label10" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="99.1666641,1.861674" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="51" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item11>
+        <Item12 Ref="52" ControlType="XRLabel" Name="label9" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="99.1666641,24.8616543" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="53" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item12>
+        <Item13 Ref="54" ControlType="XRLabel" Name="label76" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="99.1666641,47.86166" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="55" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item13>
+        <Item14 Ref="56" ControlType="XRLabel" Name="label6" Multiline="true" Text="label25" TextAlignment="MiddleLeft" SizeF="153.105988,23.0000114" LocationFloat="345.105469,47.8616829" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="57" EventName="BeforePrint" PropertyName="Text" Expression="[STUDENT_TYPE]" />
+          </ExpressionBindings>
+          <StylePriority Ref="58" UseFont="false" UseTextAlignment="false" />
+        </Item14>
+        <Item15 Ref="59" ControlType="XRLabel" Name="label5" Multiline="true" Text="Student Type" TextAlignment="MiddleLeft" SizeF="86.16612,22.9999657" LocationFloat="252.272568,47.8616829" Font="Poppins, 9pt, charSet=0" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="60" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item15>
+        <Item16 Ref="61" ControlType="XRLabel" Name="label16" Multiline="true" Text="Class          " TextAlignment="MiddleLeft" SizeF="86.16609,24.8616028" LocationFloat="252.2726,0" Font="Poppins, 9pt, charSet=0" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="62" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item16>
+        <Item17 Ref="63" ControlType="XRLabel" Name="label42" Multiline="true" Text="Date of Birth " TextAlignment="MiddleLeft" SizeF="99.1666641,23" LocationFloat="0,47.861557" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="Black" Borders="None">
+          <StylePriority Ref="64" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item17>
+        <Item18 Ref="65" ControlType="XRLabel" Name="label18" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="146.439178,22.9999924" LocationFloat="105.833412,47.86148" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="66" EventName="BeforePrint" PropertyName="Text" Expression="[DATE_OF_BIRTH]" />
+          </ExpressionBindings>
+          <StylePriority Ref="67" UseFont="false" UseTextAlignment="false" />
+        </Item18>
+        <Item19 Ref="68" ControlType="XRLabel" Name="label17" Multiline="true" Text="label17" TextAlignment="MiddleLeft" SizeF="153.105988,24.8613224" LocationFloat="345.105469,0" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="69" EventName="BeforePrint" PropertyName="Text" Expression="[CLASS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="70" UseFont="false" UseTextAlignment="false" />
+        </Item19>
+        <Item20 Ref="71" ControlType="XRLabel" Name="label1" Multiline="true" Text="Version" TextAlignment="MiddleLeft" SizeF="104.527893,22.9999657" LocationFloat="498.211456,24.8613224" Font="Poppins, 9pt, charSet=0" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="72" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item20>
+        <Item21 Ref="73" ControlType="XRLabel" Name="label24" Multiline="true" Text="Group" TextAlignment="MiddleLeft" SizeF="86.16609,22.99997" LocationFloat="252.2726,24.8616028" Font="Poppins, 9pt, charSet=0" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="74" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item21>
+        <Item22 Ref="75" ControlType="XRLabel" Name="label7" Multiline="true" Text="Shift" TextAlignment="MiddleLeft" SizeF="104.527832,22.999958" LocationFloat="498.211578,47.8613" Font="Poppins, 9pt, charSet=0" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="76" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item22>
+        <Item23 Ref="77" ControlType="XRLabel" Name="label22" Multiline="true" Text="label22" TextAlignment="MiddleLeft" SizeF="118.593994,23" LocationFloat="609.406,47.86148" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="78" EventName="BeforePrint" PropertyName="Text" Expression="[SHIFT_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="79" UseFont="false" UseTextAlignment="false" />
+        </Item23>
+        <Item24 Ref="80" ControlType="XRLabel" Name="label68" Multiline="true" Text="label25" TextAlignment="MiddleLeft" SizeF="153.105988,23.0000057" LocationFloat="345.105469,24.8613224" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="81" EventName="BeforePrint" PropertyName="Text" Expression="[GROUP_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="82" UseFont="false" UseTextAlignment="false" />
+        </Item24>
+        <Item25 Ref="83" ControlType="XRLabel" Name="label19" Multiline="true" Text="label19" TextAlignment="MiddleLeft" SizeF="118.593994,23.0000019" LocationFloat="609.406,24.8615513" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="84" EventName="BeforePrint" PropertyName="Text" Expression="[VERSION_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="85" UseFont="false" UseTextAlignment="false" />
+        </Item25>
+        <Item26 Ref="86" ControlType="XRLabel" Name="label8" Multiline="true" Text="Academic Year" TextAlignment="MiddleLeft" SizeF="104.5278,24.8613739" LocationFloat="498.211456,0" Font="Poppins, 9pt, charSet=0" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="87" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item26>
+        <Item27 Ref="88" ControlType="XRLabel" Name="label21" Multiline="true" Text="label21" TextAlignment="MiddleLeft" SizeF="118.593994,24.8617039" LocationFloat="609.406,0" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="89" EventName="BeforePrint" PropertyName="Text" Expression="[SESSION_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="90" UseFont="false" UseTextAlignment="false" />
+        </Item27>
+      </Controls>
+    </Item5>
+    <Item6 Ref="91" ControlType="GroupHeaderBand" Name="GroupHeader2" Level="1" HeightF="130.1667">
+      <Controls>
+        <Item1 Ref="92" ControlType="XRLabel" Name="label47" Multiline="true" Text="Contact Number" TextAlignment="MiddleCenter" SizeF="133.455414,23" LocationFloat="451.5446,0.000101725258" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <StylePriority Ref="93" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="94" ControlType="XRLabel" Name="label48" Multiline="true" Text="label18" TextAlignment="MiddleCenter" SizeF="133.455414,22.9999981" LocationFloat="451.5446,23.0000553" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="95" EventName="BeforePrint" PropertyName="Text" Expression="[FATHER_CONTACT_NO]" />
+          </ExpressionBindings>
+          <StylePriority Ref="96" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="97" ControlType="XRLabel" Name="label49" Multiline="true" Text="label18" TextAlignment="MiddleCenter" SizeF="133.455322,23" LocationFloat="451.5445,69.0001144" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="98" EventName="BeforePrint" PropertyName="Text" Expression="[GUARDIAN_CONTACT_NO]" />
+          </ExpressionBindings>
+          <StylePriority Ref="99" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="100" ControlType="XRLabel" Name="label50" Multiline="true" Text="label18" TextAlignment="MiddleCenter" SizeF="133.455414,23" LocationFloat="451.5446,46.0001373" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="101" EventName="BeforePrint" PropertyName="Text" Expression="[MOTHER_CONTACT_NO]" />
+          </ExpressionBindings>
+          <StylePriority Ref="102" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="103" ControlType="XRLabel" Name="label30" Multiline="true" Text="Parents" TextAlignment="MiddleCenter" SizeF="101.666664,23" LocationFloat="0,0" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <StylePriority Ref="104" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="105" ControlType="XRLabel" Name="label31" Multiline="true" Text="NID Number" TextAlignment="MiddleCenter" SizeF="145.000183,23" LocationFloat="585,0" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <StylePriority Ref="106" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="107" ControlType="XRLabel" Name="label32" Multiline="true" Text="Name" TextAlignment="MiddleCenter" SizeF="187.605316,23" LocationFloat="101.666641,0" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <StylePriority Ref="108" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item7>
+        <Item8 Ref="109" ControlType="XRLabel" Name="label33" Multiline="true" Text="Occupation" TextAlignment="MiddleCenter" SizeF="162.2727,23.0000057" LocationFloat="289.271942,5.086263E-05" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <StylePriority Ref="110" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item8>
+        <Item9 Ref="111" ControlType="XRLabel" Name="label34" Multiline="true" Text="Father" TextAlignment="MiddleCenter" SizeF="101.666664,22.9999981" LocationFloat="0,23.0000057" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <StylePriority Ref="112" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item9>
+        <Item10 Ref="113" ControlType="XRLabel" Name="label35" Multiline="true" Text="Mother" TextAlignment="MiddleCenter" SizeF="101.666664,22.9999924" LocationFloat="0,45.9999847" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <StylePriority Ref="114" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item10>
+        <Item11 Ref="115" ControlType="XRLabel" Name="label36" Multiline="true" Text="Guardian" TextAlignment="MiddleCenter" SizeF="101.666664,23" LocationFloat="0,69.0000153" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <StylePriority Ref="116" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item11>
+        <Item12 Ref="117" ControlType="XRLabel" Name="label43" Multiline="true" Text="label18" TextAlignment="MiddleCenter" SizeF="187.605316,23.0000076" LocationFloat="101.666641,68.99996" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="118" EventName="BeforePrint" PropertyName="Text" Expression="[GURDIAN_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="119" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item12>
+        <Item13 Ref="120" ControlType="XRLabel" Name="label37" Multiline="true" Text="label18" TextAlignment="MiddleCenter" SizeF="187.605286,22.9999981" LocationFloat="101.666664,23.0000057" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="121" EventName="BeforePrint" PropertyName="Text" Expression="[FATHERS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="122" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item13>
+        <Item14 Ref="123" ControlType="XRLabel" Name="label38" Multiline="true" Text="label18" TextAlignment="MiddleCenter" SizeF="187.605347,22.9999962" LocationFloat="101.666618,45.9999847" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="124" EventName="BeforePrint" PropertyName="Text" Expression="[MOTHERS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="125" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item14>
+        <Item15 Ref="126" ControlType="XRLabel" Name="label39" Multiline="true" Text="label18" TextAlignment="MiddleCenter" SizeF="162.272614,23.0000038" LocationFloat="289.271942,23.0000057" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,180,180,180" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="127" EventName="BeforePrint" PropertyName="Text" Expression="[FATHER_OCCUPATION_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="128" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item15>
+        <Item16 Ref="129" ControlType="XRLabel" Name="label40" Multiline="true" Text="label18" TextAlignment="MiddleCenter" SizeF="162.272766,23.0000114" LocationFloat="289.271942,46.0000343" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="130" EventName="BeforePrint" PropertyName="Text" Expression="[MOTHER_OCCUPATION_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="131" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item16>
+        <Item17 Ref="132" ControlType="XRLabel" Name="label41" Multiline="true" Text="label18" TextAlignment="MiddleCenter" SizeF="162.272614,23.0000076" LocationFloat="289.271942,69.00007" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="133" EventName="BeforePrint" PropertyName="Text" Expression="[GUARDIAN_OCCUPATION_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="134" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item17>
+        <Item18 Ref="135" ControlType="XRLabel" Name="label44" Multiline="true" Text="label18" TextAlignment="MiddleCenter" SizeF="145.000183,23" LocationFloat="585,22.9999542" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="136" EventName="BeforePrint" PropertyName="Text" Expression="[FATHERS_NID]" />
+          </ExpressionBindings>
+          <StylePriority Ref="137" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item18>
+        <Item19 Ref="138" ControlType="XRLabel" Name="label45" Multiline="true" Text="label18" TextAlignment="MiddleCenter" SizeF="145.000183,22.9999962" LocationFloat="585,46.0000343" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="139" EventName="BeforePrint" PropertyName="Text" Expression="[MOTHERS_NID]" />
+          </ExpressionBindings>
+          <StylePriority Ref="140" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item19>
+        <Item20 Ref="141" ControlType="XRLabel" Name="label46" Multiline="true" Text="label18" TextAlignment="MiddleCenter" SizeF="145.000122,23" LocationFloat="584.9999,69.0000153" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="142" EventName="BeforePrint" PropertyName="Text" Expression="[GUARDIAN_NID]" />
+          </ExpressionBindings>
+          <StylePriority Ref="143" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item20>
+      </Controls>
+    </Item6>
+    <Item7 Ref="144" ControlType="GroupHeaderBand" Name="GroupHeader3" HeightF="290.3334">
+      <Controls>
+        <Item1 Ref="145" ControlType="XRLabel" Name="label81" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="148.456146,45.9999847" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="146" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="147" ControlType="XRLabel" Name="label82" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="148.456146,68.99996" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="148" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="149" ControlType="XRLabel" Name="label73" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="148.078415,91.99995" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="150" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="151" ControlType="XRLabel" Name="label74" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="148.078384,115.000023" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="152" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="153" ControlType="XRLabel" Name="label75" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="573.2548,23" LocationFloat="154.745132,92.00002" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="154" EventName="BeforePrint" PropertyName="Text" Expression="[BIRTH_CERTIFICATE_NO]" />
+          </ExpressionBindings>
+          <StylePriority Ref="155" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="156" ControlType="XRLabel" Name="label77" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="573.6327,23.0000076" LocationFloat="155.122879,114.9999" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="157" EventName="BeforePrint" PropertyName="Text" Expression="[SMS_MOBILE_NUM]" />
+          </ExpressionBindings>
+          <StylePriority Ref="158" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="159" ControlType="XRLabel" Name="label79" Multiline="true" Text="Birth Certificate No." TextAlignment="MiddleLeft" SizeF="148.078354,23.0000076" LocationFloat="0,91.9999161" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="160" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item7>
+        <Item8 Ref="161" ControlType="XRLabel" Name="label80" Multiline="true" Text="SMS Mobile Number" TextAlignment="MiddleLeft" SizeF="148.078354,23" LocationFloat="0,115" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="162" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item8>
+        <Item9 Ref="163" ControlType="XRLabel" Name="label71" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="148.078384,2.54313145E-05" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="164" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item9>
+        <Item10 Ref="165" ControlType="XRLabel" Name="label72" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="148.078384,23.0000057" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="166" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item10>
+        <Item11 Ref="167" ControlType="XRLabel" Name="label70" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="233.149429,22.9999981" LocationFloat="154.745132,22.999979" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="168" EventName="BeforePrint" PropertyName="Text" Expression="[RELIGION_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="169" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item11>
+        <Item12 Ref="170" ControlType="XRLabel" Name="label69" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="233.149414,22.9999962" LocationFloat="154.745148,0" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="171" EventName="BeforePrint" PropertyName="Text" Expression="[GENDER_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="172" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item12>
+        <Item13 Ref="173" ControlType="XRLabel" Name="label67" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="232.771683,23" LocationFloat="155.122879,68.99994" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="174" EventName="BeforePrint" PropertyName="Text" Expression="[NATIONALITY_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="175" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item13>
+        <Item14 Ref="176" ControlType="XRLabel" Name="label66" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="232.771652,22.9999962" LocationFloat="155.12291,45.999958" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="177" EventName="BeforePrint" PropertyName="Text" Expression="[BLOOD_GROUP_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="178" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item14>
+        <Item15 Ref="179" ControlType="XRLabel" Name="label62" Multiline="true" Text="Nationality" TextAlignment="MiddleLeft" SizeF="148.456116,23" LocationFloat="0,68.99994" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="180" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item15>
+        <Item16 Ref="181" ControlType="XRLabel" Name="label61" Multiline="true" Text="Religion Name" TextAlignment="MiddleLeft" SizeF="148.078384,23.0000019" LocationFloat="0,22.999979" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="182" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item16>
+        <Item17 Ref="183" ControlType="XRLabel" Name="label55" Multiline="true" Text="Blood Group" TextAlignment="MiddleLeft" SizeF="148.456116,22.9999962" LocationFloat="0,45.999958" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="184" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item17>
+        <Item18 Ref="185" ControlType="XRLabel" Name="label54" Multiline="true" Text="Gender Name" TextAlignment="MiddleLeft" SizeF="148.078384,23" LocationFloat="0,0" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="186" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item18>
+        <Item19 Ref="187" ControlType="XRLabel" Name="label52" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="148.078415,207.000015" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="188" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item19>
+        <Item20 Ref="189" ControlType="XRLabel" Name="label53" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="148.078384,183.999939" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="190" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item20>
+        <Item21 Ref="191" ControlType="XRLabel" Name="label58" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="574.3882,23" LocationFloat="154.745132,183.999985" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="192" EventName="BeforePrint" PropertyName="Text" Expression="[PRESENT_ADDR]" />
+          </ExpressionBindings>
+          <StylePriority Ref="193" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item21>
+        <Item22 Ref="194" ControlType="XRLabel" Name="label60" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="572.8771,23" LocationFloat="155.12291,207.000015" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="195" EventName="BeforePrint" PropertyName="Text" Expression="[PERMANENT_ADDR]" />
+          </ExpressionBindings>
+          <StylePriority Ref="196" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item22>
+        <Item23 Ref="197" ControlType="XRLabel" Name="label63" Multiline="true" Text="Permanent Address " TextAlignment="MiddleLeft" SizeF="148.078384,23" LocationFloat="0,206.999924" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="198" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item23>
+        <Item24 Ref="199" ControlType="XRLabel" Name="label64" Multiline="true" Text="Present Address " TextAlignment="MiddleLeft" SizeF="148.078522,23" LocationFloat="5.086263E-05,183.999939" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="200" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item24>
+        <Item25 Ref="201" ControlType="XRLabel" Name="label51" Multiline="true" Text="SMS Mobile Number" TextAlignment="MiddleLeft" SizeF="148.078522,23.0000153" LocationFloat="5.086263E-05,160.999954" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="202" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item25>
+        <Item26 Ref="203" ControlType="XRLabel" Name="label56" Multiline="true" Text="Admission Date " TextAlignment="MiddleLeft" SizeF="148.078384,23" LocationFloat="0,137.999985" Font="Poppins, 9pt, charSet=0" ForeColor="Teal" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="204" UseFont="false" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item26>
+        <Item27 Ref="205" ControlType="XRLabel" Name="label57" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="573.2548,23" LocationFloat="154.745132,161.000015" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="206" EventName="BeforePrint" PropertyName="Text" Expression="[SMS_MOBILE_NUM]" />
+          </ExpressionBindings>
+          <StylePriority Ref="207" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item27>
+        <Item28 Ref="208" ControlType="XRLabel" Name="label59" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="573.6327,22.9999847" LocationFloat="155.12291,137.999985" Font="Poppins, 9pt, charSet=0" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="209" EventName="BeforePrint" PropertyName="Text" Expression="[ADMISSION_DATE]" />
+          </ExpressionBindings>
+          <StylePriority Ref="210" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item28>
+        <Item29 Ref="211" ControlType="XRLabel" Name="label78" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="148.078384,160.999985" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="212" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item29>
+        <Item30 Ref="213" ControlType="XRLabel" Name="label65" Multiline="true" Text=":" TextAlignment="MiddleLeft" SizeF="6.666748,22.9999847" LocationFloat="148.078384,138" Padding="2,2,0,0,100" BorderColor="255,160,160,160" Borders="None">
+          <StylePriority Ref="214" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item30>
+      </Controls>
+    </Item7>
+    <Item8 Ref="215" ControlType="GroupFooterBand" Name="GroupFooter1" HeightF="300.0001">
+      <Controls>
+        <Item1 Ref="216" ControlType="XRLabel" Name="label20" Multiline="true" Text="taken by the school." TextAlignment="MiddleLeft" SizeF="728,25.166626" LocationFloat="0,63.499958" Font="Microsoft Sans Serif, 9pt, charSet=0" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="217" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="218" ControlType="XRLabel" Name="label11" Multiline="true" Text="I hereby declare i will be obey the rules and regualtions of this school while studing.I am bound to act upon any decisions " TextAlignment="MiddleLeft" SizeF="728,25.166626" LocationFloat="0,38.3333321" Font="Microsoft Sans Serif, 9pt, charSet=0" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="219" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="220" ControlType="XRLabel" Name="label83" Multiline="true" Text="Signature of the Student" TextAlignment="TopCenter" SizeF="175.9091,23.0000076" LocationFloat="22.0454655,233.666763" Padding="2,2,0,0,100" BorderColor="Black" Borders="None">
+          <StylePriority Ref="221" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="222" ControlType="XRLabel" Name="label84" Multiline="true" Text="------------------------------------" TextAlignment="BottomCenter" SizeF="204.848328,22.9999847" LocationFloat="10.0000257,210.666779" Padding="2,2,0,0,100" BorderColor="Black" Borders="None">
+          <StylePriority Ref="223" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="224" ControlType="XRLabel" Name="label85" Multiline="true" Text="Signature of the Guardian" TextAlignment="TopCenter" SizeF="182.727219,23" LocationFloat="268.817352,233.666763" Padding="2,2,0,0,100" BorderColor="Black" Borders="None">
+          <StylePriority Ref="225" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="226" ControlType="XRLabel" Name="label86" Multiline="true" Text="-------------------------------------------" TextAlignment="BottomCenter" SizeF="236.305481,22.9999847" LocationFloat="242.715424,210.666779" Padding="2,2,0,0,100" BorderColor="Black" Borders="None">
+          <StylePriority Ref="227" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="228" ControlType="XRLabel" Name="label87" Multiline="true" Text="Principal" TextAlignment="TopCenter" SizeF="165.302979,23.0000076" LocationFloat="531.3635,233.666763" Padding="2,2,0,0,100" BorderColor="Black" Borders="None">
+          <StylePriority Ref="229" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item7>
+        <Item8 Ref="230" ControlType="XRLabel" Name="label88" Multiline="true" Text="-----------------------------" TextAlignment="BottomCenter" SizeF="165.30304,23" LocationFloat="531.3635,210.666779" Padding="2,2,0,0,100" BorderColor="Black" Borders="None">
+          <StylePriority Ref="231" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item8>
+      </Controls>
+    </Item8>
+  </Bands>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.v21.1" Name="sqlDataSource1" Base64="PFNxbERhdGFTb3VyY2UgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxDb25uZWN0aW9uIE5hbWU9IkRldlJlcG9ydENvbm5lY3Rpb24iIEZyb21BcHBDb25maWc9InRydWUiIC8+PFF1ZXJ5IFR5cGU9IlN0b3JlZFByb2NRdWVyeSIgTmFtZT0iRVVHU0NfU1REX09OTElORV9BRE1JU1NJT05fRFBEX09OTElORV9BRE1JU1NJT05fU1RVREVOVF9SRVBPUlQiPjxQYXJhbWV0ZXIgTmFtZT0iUF9BUFBMSUNBVElPTl9JRCIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uRGVjaW1hbCkoP0FQUExJQ0FUSU9OX0lEKTwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgTmFtZT0iUF9TTVNfTU9CSUxFX05VTSIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uRGVjaW1hbCkoP1NNU19NT0JJTEVfTlVNKTwvUGFyYW1ldGVyPjxQcm9jTmFtZT4iRVVHU0NfU1REX09OTElORV9BRE1JU1NJT04iLiJEUERfT05MSU5FX0FETUlTU0lPTl9TVFVERU5UX1JFUE9SVCI8L1Byb2NOYW1lPjwvUXVlcnk+PFJlc3VsdFNjaGVtYT48RGF0YVNldCBOYW1lPSJzcWxEYXRhU291cmNlMSI+PFZpZXcgTmFtZT0iRVVHU0NfU1REX09OTElORV9BRE1JU1NJT05fRFBEX09OTElORV9BRE1JU1NJT05fU1RVREVOVF9SRVBPUlQiPjxGaWVsZCBOYW1lPSJTVFVERU5UX0lEIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJPUkdfQ09ERSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJPUkdfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDQU1QVVNfQ09ERSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDQU1QVVNfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTVFVERU5UX1RZUEUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQURNSVNTSU9OX0RBVEUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU1RBUlRfU0VTU0lPTl9DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNFU1NJT05fTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDVVJfU0VTU0lPTl9DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNMQVNTX0NPREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ0xBU1NfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJHUk9VUF9DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkdST1VQX05BTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0VDVElPTl9DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNISUZUX0NPREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0hJRlRfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJWRVJTSU9OX0NPREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVkVSU0lPTl9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IllFQVJfQ09ERSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJZRUFSX05BTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0VNRVNURVJfQ09ERSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTRU1FU1RFUl9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNNU19NT0JJTEVfTlVNIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNUVURFTlRfSU1BR0VfVVJMIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNUVURFTlRfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEQVRFX09GX0JJUlRIIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJJUlRIX0NFUlRJRklDQVRFX05PIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJMQVNUX1NDSE9PTF9OQU1FX0FERFIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iR0VOREVSX0NPREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iR0VOREVSX05BTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUkVMSUdJT05fQ09ERSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJSRUxJR0lPTl9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJMT09EX0dST1VQX0NPREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQkxPT0RfR1JPVVBfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJOQVRJT05BTElUWV9DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik5BVElPTkFMSVRZX05BTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRkFUSEVSU19OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1PVEhFUlNfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJHVVJESUFOX05BTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRkFUSEVSX09DQ1VQQVRJT04iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRkFUSEVSX09DQ1VQQVRJT05fTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJGQVRIRVJfQ09OVEFDVF9OTyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNT1RIRVJfT0NDVVBBVElPTiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNT1RIRVJfT0NDVVBBVElPTl9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1PVEhFUl9DT05UQUNUX05PIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkdVQVJESUFOX09DQ1VQQVRJT04iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iR1VBUkRJQU5fT0NDVVBBVElPTl9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkdVQVJESUFOX0NPTlRBQ1RfTk8iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iR1VBUkRJQU5fUkVMQVRJT05fVFlQRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJGQVRIRVJTX05JRCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNT1RIRVJTX05JRCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJHVUFSRElBTl9OSUQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSVNfQlVFVF9TVEFGRiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJGQVRIRVJfTU9USEVSX05BTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTU9OVEhMWV9JTkNPTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iREVTSUdOQVRJT04iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRElWSVNJT05fT0ZGSUNFX0JSQU5DSCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJESVZfT0ZGSV9CUkFOX0hFQURfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQUkVTRU5UX0FERFIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUEVSTUFORU5UX0FERFIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ1JFQVRFX0RBVEUiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJDUkVBVEVfQlkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVVBEQVRFX0RBVEUiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJVUERBVEVfQlkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSVNfQVBQUk9WRURfQ09ERSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQQUlEX0FNT1VOVCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iSVNfUEFJRF9DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklTX1BBSUQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSVNfQVBQUk9WRUQiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0PjwvUmVzdWx0U2NoZW1hPjxDb25uZWN0aW9uT3B0aW9ucyBDbG9zZUNvbm5lY3Rpb249InRydWUiIC8+PC9TcWxEYXRhU291cmNlPg==" />
+  </ComponentStorage>
+  <ObjectStorage>
+    <Item1 ObjectType="DevExpress.XtraReports.Serialization.ObjectStorageInfo, DevExpress.XtraReports.v21.1" Ref="3" Content="System.Decimal" Type="System.Type" />
+  </ObjectStorage>
+</XtraReportsLayoutSerializer>

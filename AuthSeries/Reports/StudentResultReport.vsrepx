@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="21.1.5.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="StudentResultReport" Margins="77, 89, 100, 100" PageWidth="850" PageHeight="1100" Version="21.1" DataMember="EMS_DPG_RPT_EMS_RESULT_WISE_STUINF_DPD_EXAM_LST" DataSource="#Ref-0" Font="Arial, 9.75pt">
+  <Extensions>
+    <Item1 Ref="2" Key="VSReportExtInfo" Value=".vsrepx" />
+  </Extensions>
+  <Parameters>
+    <Item1 Ref="4" Name="ORG_CODE" />
+    <Item2 Ref="5" Name="TEACHER_CODE" />
+    <Item3 Ref="6" Name="SUBJECT_CODE" />
+    <Item4 Ref="7" Name="EXAM_CODE" />
+    <Item5 Ref="8" Name="CLASS_CODE" />
+    <Item6 Ref="9" Name="VERSION_CODE" />
+    <Item7 Ref="10" Name="SESSION_CODE" />
+    <Item8 Ref="11" Name="CAMPUS_CODE" />
+    <Item9 Ref="12" Name="GROUP_CODE" />
+    <Item10 Ref="13" Name="SECTION_CODE" />
+    <Item11 Ref="14" Name="SHIFT_CODE" />
+    <Item12 Ref="15" Name="USER_CODE" />
+    <Item13 Ref="16" Name="EXAM_DTL_CODE" />
+  </Parameters>
+  <Bands>
+    <Item1 Ref="17" ControlType="TopMarginBand" Name="TopMargin" />
+    <Item2 Ref="18" ControlType="BottomMarginBand" Name="BottomMargin">
+      <Controls>
+        <Item1 Ref="19" ControlType="XRPageInfo" Name="pageInfo2" TextFormatString="Page {0} of {1}" TextAlignment="TopRight" SizeF="325,23" LocationFloat="359,0" StyleName="PageInfo" />
+      </Controls>
+    </Item2>
+    <Item3 Ref="20" ControlType="ReportHeaderBand" Name="ReportHeader" HeightF="187.000122" Font="Arial, 9.75pt, style=Bold">
+      <Controls>
+        <Item1 Ref="21" ControlType="XRPageInfo" Name="pageInfo1" PageInfo="DateTime" TextAlignment="MiddleRight" SizeF="200.83313,23" LocationFloat="483.1668,81.8610153" StyleName="PageInfo" Font="Poppins, 9pt, style=Bold">
+          <StylePriority Ref="22" UseFont="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="23" ControlType="XRLabel" Name="label24" Multiline="true" Text="label24" TextAlignment="MiddleLeft" SizeF="155.833191,23" LocationFloat="528.1668,141.000031" Font="Poppins, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="24" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_RPT_EMS_RESULT_WISE_STUINF_DPD_EXAM_LST].[EXAM_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="25" UseFont="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="26" ControlType="XRLabel" Name="label20" Multiline="true" Text="label20" TextAlignment="MiddleLeft" SizeF="155.833191,22.9999924" LocationFloat="528.1668,118.00013" Font="Poppins, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="27" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_RPT_EMS_RESULT_WISE_STUINF_DPD_TEACHER_LST].[TEACHER_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="28" UseFont="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="29" ControlType="XRLabel" Name="label19" Multiline="true" Text="Teacher Name    :" TextAlignment="MiddleLeft" SizeF="114.166595,22.9999924" LocationFloat="414.0002,118.00013" Font="Poppins, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="30" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="31" ControlType="XRLabel" Name="label16" Multiline="true" Text="label16" TextAlignment="MiddleLeft" SizeF="116.441338,23" LocationFloat="79.99995,164.000046" Font="Poppins, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="32" EventName="BeforePrint" PropertyName="Text" Expression="[SESSION_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="33" UseFont="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="34" ControlType="XRLabel" Name="label15" Multiline="true" Text="Session      :" TextAlignment="MiddleLeft" SizeF="79.99998,23" LocationFloat="0,164.000046" Font="Poppins, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="35" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="36" ControlType="XRLabel" Name="label12" Multiline="true" Text="label12" TextAlignment="MiddleLeft" SizeF="116.441338,23" LocationFloat="79.99995,141.000015" Font="Poppins, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="37" EventName="BeforePrint" PropertyName="Text" Expression="[VERSION_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="38" UseFont="false" UseTextAlignment="false" />
+        </Item7>
+        <Item8 Ref="39" ControlType="XRLabel" Name="label11" Multiline="true" Text="Version      :" TextAlignment="MiddleLeft" SizeF="79.99998,23" LocationFloat="0,141.000015" Font="Poppins, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="40" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item8>
+        <Item9 Ref="41" ControlType="XRLabel" Name="label8" Multiline="true" Text="label8" TextAlignment="MiddleLeft" SizeF="116.441338,22.9999924" LocationFloat="285.833466,117.999878" Font="Poppins, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="42" EventName="BeforePrint" PropertyName="Text" Expression="[CLASS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="43" UseFont="false" UseTextAlignment="false" />
+        </Item9>
+        <Item10 Ref="44" ControlType="XRLabel" Name="label7" Multiline="true" Text="Class        :" TextAlignment="MiddleLeft" SizeF="79.16666,23.0000076" LocationFloat="206.666763,117.999878" Font="Poppins, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="45" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item10>
+        <Item11 Ref="46" ControlType="XRLabel" Name="label23" Multiline="true" Text="Exam Name          :" TextAlignment="MiddleLeft" SizeF="114.166595,23" LocationFloat="414.0002,141.0001" Font="Poppins, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="47" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item11>
+        <Item12 Ref="48" ControlType="XRLabel" Name="label22" Multiline="true" Text="label22" TextAlignment="MiddleLeft" SizeF="155.833191,23.0000153" LocationFloat="528.1668,164.000046" Font="Poppins, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="49" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_RPT_EMS_RESULT_WISE_STUINF_DPD_SUBJECT_LST].[SUBJECT_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="50" UseFont="false" UseTextAlignment="false" />
+        </Item12>
+        <Item13 Ref="51" ControlType="XRLabel" Name="label21" Multiline="true" Text="Subject Name      :" TextAlignment="MiddleLeft" SizeF="115.000031,23" LocationFloat="413.166779,164.000122" Font="Poppins, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="52" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item13>
+        <Item14 Ref="53" ControlType="XRLabel" Name="label18" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="116.441315,22.9999847" LocationFloat="285.833466,163.999939" Font="Poppins, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="54" EventName="BeforePrint" PropertyName="Text" Expression="[SHIFT_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="55" UseFont="false" UseTextAlignment="false" />
+        </Item14>
+        <Item15 Ref="56" ControlType="XRLabel" Name="label17" Multiline="true" Text="Shift           :" TextAlignment="MiddleLeft" SizeF="79.16664,22.9999847" LocationFloat="206.666763,163.9999" Font="Poppins, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="57" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item15>
+        <Item16 Ref="58" ControlType="XRLabel" Name="label14" Multiline="true" Text="label14" TextAlignment="MiddleLeft" SizeF="116.441345,23" LocationFloat="285.833466,140.999908" Font="Poppins, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="59" EventName="BeforePrint" PropertyName="Text" Expression="[SECTION_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="60" UseFont="false" UseTextAlignment="false" />
+        </Item16>
+        <Item17 Ref="61" ControlType="XRLabel" Name="label13" Multiline="true" Text="Section   :" TextAlignment="MiddleLeft" SizeF="79.16664,23" LocationFloat="206.666763,140.999908" Font="Poppins, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="62" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item17>
+        <Item18 Ref="63" ControlType="XRLabel" Name="label10" Multiline="true" Text="label10" TextAlignment="MiddleLeft" SizeF="116.441322,23" LocationFloat="79.99995,118.000031" Font="Poppins, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="64" EventName="BeforePrint" PropertyName="Text" Expression="[GROUP_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="65" UseFont="false" UseTextAlignment="false" />
+        </Item18>
+        <Item19 Ref="66" ControlType="XRLabel" Name="label6" Multiline="true" Text="label6" TextAlignment="MiddleCenter" SizeF="400.8331,23.0000019" LocationFloat="150.017746,34.66667" Font="Poppins, 11pt, style=Bold" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="67" EventName="BeforePrint" PropertyName="Text" Expression="[CAMPUS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="68" UseFont="false" UseTextAlignment="false" />
+        </Item19>
+        <Item20 Ref="69" ControlType="XRLabel" Name="label9" Multiline="true" Text="Group          :" TextAlignment="MiddleLeft" SizeF="79.99996,23" LocationFloat="0,118.000031" Font="Poppins, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="70" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item20>
+        <Item21 Ref="71" ControlType="XRPictureBox" Name="pictureBox1" SizeF="101.666664,97.5" LocationFloat="0,0">
+          <ExpressionBindings>
+            <Item1 Ref="72" EventName="BeforePrint" PropertyName="ImageSource" Expression="[ORG_IMAGE]" />
+          </ExpressionBindings>
+        </Item21>
+        <Item22 Ref="73" ControlType="XRLabel" Name="label2" Multiline="true" Text="label2" TextAlignment="MiddleCenter" SizeF="496.684174,34.66667" LocationFloat="101.666664,0" Font="Poppins, 14pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="74" EventName="BeforePrint" PropertyName="Text" Expression="[ORG_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="75" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item22>
+        <Item23 Ref="76" ControlType="XRLabel" Name="label1" Multiline="true" Text="Student Result Report&#xD;&#xA;" TextAlignment="MiddleCenter" SizeF="400.8331,24.19434" LocationFloat="150.017746,57.6666756" StyleName="Title" Font="Poppins, 11pt, style=Bold" ForeColor="Black">
+          <StylePriority Ref="77" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item23>
+      </Controls>
+      <StylePriority Ref="78" UseFont="false" />
+    </Item3>
+    <Item4 Ref="79" ControlType="GroupHeaderBand" Name="GroupHeader1" GroupUnion="WithFirstDetail" HeightF="27.9999981">
+      <Controls>
+        <Item1 Ref="80" ControlType="XRTable" Name="table1" SizeF="684,27.9999981" LocationFloat="0,0">
+          <Rows>
+            <Item1 Ref="81" ControlType="XRTableRow" Name="tableRow1" Weight="1">
+              <Cells>
+                <Item1 Ref="82" ControlType="XRTableCell" Name="tableCell1" Weight="0.18012278630183293" Text="Student Name" TextAlignment="MiddleCenter" StyleName="DetailCaption1" Font="Poppins, 9pt, style=Bold" ForeColor="Black" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <StylePriority Ref="83" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item1>
+                <Item2 Ref="84" ControlType="XRTableCell" Name="tableCell2" Weight="0.14957688551682694" Text="Class Roll" TextAlignment="MiddleCenter" StyleName="DetailCaption1" Font="Poppins, 9pt, style=Bold" ForeColor="Black" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <StylePriority Ref="85" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item2>
+                <Item3 Ref="86" ControlType="XRTableCell" Name="tableCell5" Weight="0.22265430319751134" Text="Attendance Status" TextAlignment="MiddleCenter" StyleName="DetailCaption1" Font="Poppins, 9pt, style=Bold" ForeColor="Black" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <StylePriority Ref="87" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item3>
+                <Item4 Ref="88" ControlType="XRTableCell" Name="tableCell6" Weight="0.19736179721060643" Multiline="true" Text="Exam Name" TextAlignment="MiddleCenter" StyleName="DetailCaption1" Font="Poppins, 9pt, style=Bold" ForeColor="Black" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <StylePriority Ref="89" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item4>
+                <Item5 Ref="90" ControlType="XRTableCell" Name="tableCell3" Weight="0.18775444617638221" Multiline="true" Text="Short Name" TextAlignment="MiddleCenter" StyleName="DetailCaption1" Font="Poppins, 9pt, style=Bold" ForeColor="Black" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <StylePriority Ref="91" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item5>
+                <Item6 Ref="92" ControlType="XRTableCell" Name="tableCell4" Weight="0.18775444617638221" Multiline="true" Text=" Mark" TextAlignment="MiddleCenter" StyleName="DetailCaption1" Font="Poppins, 9pt, style=Bold" ForeColor="Black" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <StylePriority Ref="93" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item6>
+              </Cells>
+            </Item1>
+          </Rows>
+        </Item1>
+      </Controls>
+    </Item4>
+    <Item5 Ref="94" ControlType="DetailBand" Name="Detail" HeightF="25.000021">
+      <Controls>
+        <Item1 Ref="95" ControlType="XRLabel" Name="label4" Multiline="true" Text="label4" TextAlignment="MiddleCenter" SizeF="114.1319,25" LocationFloat="569.868042,0" Font="Poppins, 9pt" Padding="2,2,0,0,100" BorderColor="Gainsboro" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="96" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_RPT_EMS_RESULT_WISE_STUINF_DPD_RPT_EMS_RESULT_WISE_STUINF].[MARK]" />
+          </ExpressionBindings>
+          <StylePriority Ref="97" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="98" ControlType="XRLabel" Name="label3" Multiline="true" Text="label3" TextAlignment="MiddleCenter" SizeF="114.131866,25" LocationFloat="455.736176,0" Font="Poppins, 9pt" Padding="2,2,0,0,100" BorderColor="Gainsboro" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="99" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_RPT_EMS_RESULT_WISE_STUINF_DPD_RPT_EMS_RESULT_WISE_STUINF].[SHORT_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="100" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="101" ControlType="XRTable" Name="table2" SizeF="455.736176,25" LocationFloat="0,0" OddStyleName="DetailData3_Odd">
+          <Rows>
+            <Item1 Ref="102" ControlType="XRTableRow" Name="tableRow2" Weight="11.5">
+              <Cells>
+                <Item1 Ref="103" ControlType="XRTableCell" Name="tableCell7" Weight="0.16007721848214" TextAlignment="MiddleCenter" StyleName="DetailData1" Font="Poppins, 9pt" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <ExpressionBindings>
+                    <Item1 Ref="104" EventName="BeforePrint" PropertyName="Text" Expression="[STUDENT_NAME]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="105" UseFont="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item1>
+                <Item2 Ref="106" ControlType="XRTableCell" Name="tableCell8" Weight="0.13293072654629634" TextAlignment="MiddleCenter" StyleName="DetailData1" Font="Poppins, 9pt" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <ExpressionBindings>
+                    <Item1 Ref="107" EventName="BeforePrint" PropertyName="Text" Expression="[CLASS_ROLL]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="108" UseFont="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item2>
+                <Item3 Ref="109" ControlType="XRTableCell" Name="tableCell11" Weight="0.19787545134754503" TextAlignment="MiddleCenter" StyleName="DetailData1" Font="Poppins, 9pt" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <ExpressionBindings>
+                    <Item1 Ref="110" EventName="BeforePrint" PropertyName="Text" Expression="[ATTENDANCE_STATUS]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="111" UseFont="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item3>
+                <Item4 Ref="112" ControlType="XRTableCell" Name="tableCell12" Weight="0.17539765953177797" TextAlignment="MiddleCenter" StyleName="DetailData1" Font="Poppins, 9pt" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <ExpressionBindings>
+                    <Item1 Ref="113" EventName="BeforePrint" PropertyName="Text" Expression="[EXAM_DTL_NAME]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="114" UseFont="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item4>
+              </Cells>
+            </Item1>
+          </Rows>
+        </Item3>
+      </Controls>
+    </Item5>
+  </Bands>
+  <StyleSheet>
+    <Item1 Ref="115" Name="Title" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 14.25pt" ForeColor="255,75,75,75" BackColor="Transparent" BorderColor="Black" Sides="None" StringFormat="Near;Near;0;None;Character;Default" BorderWidthSerializable="1" />
+    <Item2 Ref="116" Name="DetailCaption1" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt, style=Bold" ForeColor="White" BackColor="255,75,75,75" BorderColor="White" Sides="Left" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item3 Ref="117" Name="DetailData1" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt" ForeColor="Black" BorderColor="Transparent" Sides="Left" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item4 Ref="118" Name="DetailData3_Odd" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt" ForeColor="Black" BackColor="255,231,231,231" BorderColor="Transparent" Sides="None" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+    <Item5 Ref="119" Name="PageInfo" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt, style=Bold" ForeColor="255,75,75,75" StringFormat="Near;Near;0;None;Character;Default" />
+  </StyleSheet>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.v21.1" Name="sqlDataSource1" Base64="PFNxbERhdGFTb3VyY2UgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxDb25uZWN0aW9uIE5hbWU9IkRldlJlcG9ydE9yYWNsZUNvbm5lY3Rpb24iIEZyb21BcHBDb25maWc9InRydWUiIC8+PFF1ZXJ5IFR5cGU9IlN0b3JlZFByb2NRdWVyeSIgTmFtZT0iRU1TX0RQR19SUFRfRU1TX1JFU1VMVF9XSVNFX1NUVUlORl9EUERfUlBUX0VNU19SRVNVTFRfV0lTRV9TVFVJTkYiPjxQYXJhbWV0ZXIgTmFtZT0iUF9PUkdfQ09ERSIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/T1JHX0NPREUpPC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBOYW1lPSJQX1RFQUNIRVJfQ09ERSIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/VEVBQ0hFUl9DT0RFKTwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgTmFtZT0iUF9TVUJKRUNUX0NPREUiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP1NVQkpFQ1RfQ09ERSk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IlBfRVhBTV9DT0RFIiBUeXBlPSJEZXZFeHByZXNzLkRhdGFBY2Nlc3MuRXhwcmVzc2lvbiI+KFN5c3RlbS5TdHJpbmcpKD9FWEFNX0NPREUpPC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBOYW1lPSJQX0NMQVNTX0NPREUiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP0NMQVNTX0NPREUpPC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBOYW1lPSJQX1ZFUlNJT05fQ09ERSIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/VkVSU0lPTl9DT0RFKTwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgTmFtZT0iUF9TRVNTSU9OX0NPREUiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP1NFU1NJT05fQ09ERSk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IlBfQ0FNUFVTX0NPREUiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP0NBTVBVU19DT0RFKTwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgTmFtZT0iUF9HUk9VUF9DT0RFIiBUeXBlPSJEZXZFeHByZXNzLkRhdGFBY2Nlc3MuRXhwcmVzc2lvbiI+KFN5c3RlbS5TdHJpbmcpKD9HUk9VUF9DT0RFKTwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgTmFtZT0iUF9TRUNUSU9OX0NPREUiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP1NFQ1RJT05fQ09ERSk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IlBfU0hJRlRfQ09ERSIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/U0hJRlRfQ09ERSk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IlBfVVNFUl9JRCIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/VVNFUl9DT0RFKTwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgTmFtZT0iUF9FWEFNX0RUTF9DT0RFIiBUeXBlPSJEZXZFeHByZXNzLkRhdGFBY2Nlc3MuRXhwcmVzc2lvbiI+KFN5c3RlbS5TdHJpbmcpKD9FWEFNX0RUTF9DT0RFKTwvUGFyYW1ldGVyPjxQcm9jTmFtZT4iRU1TIi4iRFBHX1JQVF9FTVNfUkVTVUxUX1dJU0VfU1RVSU5GIi4iRFBEX1JQVF9FTVNfUkVTVUxUX1dJU0VfU1RVSU5GIjwvUHJvY05hbWU+PC9RdWVyeT48UXVlcnkgVHlwZT0iU3RvcmVkUHJvY1F1ZXJ5IiBOYW1lPSJFTVNfRFBHX1JQVF9FTVNfUkVTVUxUX1dJU0VfU1RVSU5GX0RQRF9URUFDSEVSX0xTVCI+PFBhcmFtZXRlciBOYW1lPSJQX09SR19DT0RFIiBUeXBlPSJEZXZFeHByZXNzLkRhdGFBY2Nlc3MuRXhwcmVzc2lvbiI+KFN5c3RlbS5TdHJpbmcpKD9PUkdfQ09ERSk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IlBfQ0FNUFVTX0NPREUiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP0NBTVBVU19DT0RFKTwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgTmFtZT0iUF9TVUJKRUNUX0NPREUiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP1NVQkpFQ1RfQ09ERSk8L1BhcmFtZXRlcj48UHJvY05hbWU+IkVNUyIuIkRQR19SUFRfRU1TX1JFU1VMVF9XSVNFX1NUVUlORiIuIkRQRF9URUFDSEVSX0xTVCI8L1Byb2NOYW1lPjwvUXVlcnk+PFF1ZXJ5IFR5cGU9IlN0b3JlZFByb2NRdWVyeSIgTmFtZT0iRU1TX0RQR19SUFRfRU1TX1JFU1VMVF9XSVNFX1NUVUlORl9EUERfU1VCSkVDVF9MU1QiPjxQYXJhbWV0ZXIgTmFtZT0iUF9PUkdfQ09ERSIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/T1JHX0NPREUpPC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBOYW1lPSJQX0NMQVNTX0NPREUiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP0NMQVNTX0NPREUpPC9QYXJhbWV0ZXI+PFByb2NOYW1lPiJFTVMiLiJEUEdfUlBUX0VNU19SRVNVTFRfV0lTRV9TVFVJTkYiLiJEUERfU1VCSkVDVF9MU1QiPC9Qcm9jTmFtZT48L1F1ZXJ5PjxRdWVyeSBUeXBlPSJTdG9yZWRQcm9jUXVlcnkiIE5hbWU9IkVNU19EUEdfUlBUX0VNU19SRVNVTFRfV0lTRV9TVFVJTkZfRFBEX0VYQU1fTFNUIj48UGFyYW1ldGVyIE5hbWU9IlBfT1JHX0NPREUiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP09SR19DT0RFKTwvUGFyYW1ldGVyPjxQcm9jTmFtZT4iRU1TIi4iRFBHX1JQVF9FTVNfUkVTVUxUX1dJU0VfU1RVSU5GIi4iRFBEX0VYQU1fTFNUIjwvUHJvY05hbWU+PC9RdWVyeT48UmVzdWx0U2NoZW1hPjxEYXRhU2V0IE5hbWU9InNxbERhdGFTb3VyY2UxIj48VmlldyBOYW1lPSJFTVNfRFBHX1JQVF9FTVNfUkVTVUxUX1dJU0VfU1RVSU5GX0RQRF9SUFRfRU1TX1JFU1VMVF9XSVNFX1NUVUlORiI+PEZpZWxkIE5hbWU9IlNUVURFTlRfSUQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik9SR19OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik9SR19JTUFHRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTVFVERU5UX0NPREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU1RVREVOVF9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkZBVEhFUlNfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDQU1QVVNfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDTEFTU19OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkdST1VQX05BTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0VDVElPTl9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNFU1NJT05fTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDTEFTU19ST0xMIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlZFUlNJT05fTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTSElGVF9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNIT1JUX05BTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iR1JBREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iR1BBIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1BUksiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IkFUVEVOREFOQ0VfU1RBVFVTIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkVYQU1fRFRMX05BTUUiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iRU1TX0RQR19SUFRfRU1TX1JFU1VMVF9XSVNFX1NUVUlORl9EUERfVEVBQ0hFUl9MU1QiPjxGaWVsZCBOYW1lPSJURUFDSEVSX0NPREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVEVBQ0hFUl9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjxWaWV3IE5hbWU9IkVNU19EUEdfUlBUX0VNU19SRVNVTFRfV0lTRV9TVFVJTkZfRFBEX1NVQkpFQ1RfTFNUIj48RmllbGQgTmFtZT0iU1VCSkVDVF9DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNVQkpFQ1RfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48VmlldyBOYW1lPSJFTVNfRFBHX1JQVF9FTVNfUkVTVUxUX1dJU0VfU1RVSU5GX0RQRF9FWEFNX0xTVCI+PEZpZWxkIE5hbWU9IkVYQU1fQ09ERSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJFWEFNX05BTUUiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0PjwvUmVzdWx0U2NoZW1hPjxDb25uZWN0aW9uT3B0aW9ucyBDbG9zZUNvbm5lY3Rpb249InRydWUiIC8+PC9TcWxEYXRhU291cmNlPg==" />
+  </ComponentStorage>
+</XtraReportsLayoutSerializer>

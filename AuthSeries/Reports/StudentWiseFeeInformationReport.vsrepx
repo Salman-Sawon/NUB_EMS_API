@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="21.1.5.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="StudentWiseFeeInformationReport" Margins="0, 1, 100, 100" PageWidth="850" PageHeight="1100" Version="21.1" DataMember="EMS_DPG_RPT_EMS_FEE_INFORMATION_DPD_RPT_EMS_FEE_INFORMATION" DataSource="#Ref-0" TextAlignment="TopCenter" Font="Arial, 9.75pt">
+  <Extensions>
+    <Item1 Ref="2" Key="VSReportExtInfo" Value=".vsrepx" />
+  </Extensions>
+  <Parameters>
+    <Item1 Ref="4" Name="ORG_CODE" />
+    <Item2 Ref="5" Name="CAMPUS_CODE" />
+    <Item3 Ref="6" Name="CLASS_CODE" />
+    <Item4 Ref="7" Name="GROUP_CODE" />
+    <Item5 Ref="8" Name="VERSION_CODE" />
+    <Item6 Ref="9" Name="SECTION_CODE" />
+    <Item7 Ref="10" Name="SESSION_CODE" />
+    <Item8 Ref="11" Name="SHIFT_CODE" />
+    <Item9 Ref="12" Name="START_BILL_MONTH" />
+    <Item10 Ref="13" Name="END_BILL_MONTH" />
+    <Item11 Ref="14" Name="PROCESS_BILL_MONTH" />
+    <Item12 Ref="15" Name="STUDENT_CODE" />
+    <Item13 Ref="16" Name="USER_CODE" />
+  </Parameters>
+  <Bands>
+    <Item1 Ref="17" ControlType="TopMarginBand" Name="TopMargin" />
+    <Item2 Ref="18" ControlType="BottomMarginBand" Name="BottomMargin">
+      <Controls>
+        <Item1 Ref="19" ControlType="XRPageInfo" Name="pageInfo1" PageInfo="DateTime" SizeF="400,23" LocationFloat="0,0" StyleName="PageInfo" ForeColor="Teal">
+          <StylePriority Ref="20" UseForeColor="false" />
+        </Item1>
+        <Item2 Ref="21" ControlType="XRPageInfo" Name="pageInfo2" TextFormatString="Page {0} of {1}" TextAlignment="TopRight" SizeF="449.000061,23" LocationFloat="400,0" StyleName="PageInfo" ForeColor="Teal">
+          <StylePriority Ref="22" UseForeColor="false" />
+        </Item2>
+      </Controls>
+    </Item2>
+    <Item3 Ref="23" ControlType="ReportHeaderBand" Name="ReportHeader" HeightF="81.6666641">
+      <Controls>
+        <Item1 Ref="24" ControlType="XRLabel" Name="label29" Text="Student Wise Fee Information" TextAlignment="TopLeft" SizeF="249.217331,24.1943359" LocationFloat="599.7827,50.8056641" StyleName="Title" Font="Baskerville Old Face, 12pt, style=Bold" ForeColor="SaddleBrown">
+          <StylePriority Ref="25" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="26" ControlType="XRLabel" Name="label30" Multiline="true" Text="label2" TextAlignment="TopCenter" SizeF="249.217346,40.8056641" LocationFloat="599.7827,10" Font="Baskerville Old Face, 14pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="27" EventName="BeforePrint" PropertyName="Text" Expression="[ORG_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="28" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="29" ControlType="XRLabel" Name="label4" Text="Student Wise Fee Information" TextAlignment="TopLeft" SizeF="249.217331,24.1943359" LocationFloat="300,50.8056641" StyleName="Title" Font="Baskerville Old Face, 12pt, style=Bold" ForeColor="SaddleBrown">
+          <StylePriority Ref="30" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="31" ControlType="XRLabel" Name="label3" Multiline="true" Text="label2" TextAlignment="TopCenter" SizeF="249.217346,40.8056641" LocationFloat="300,10" Font="Baskerville Old Face, 14pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="32" EventName="BeforePrint" PropertyName="Text" Expression="[ORG_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="33" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="34" ControlType="XRLabel" Name="label2" Multiline="true" Text="label2" TextAlignment="TopCenter" SizeF="249.217331,40.8056641" LocationFloat="0,10" Font="Baskerville Old Face, 14pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="35" EventName="BeforePrint" PropertyName="Text" Expression="[ORG_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="36" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="37" ControlType="XRLabel" Name="label1" Text="Student Wise Fee Information" TextAlignment="TopLeft" SizeF="249.217331,24.1943359" LocationFloat="0,50.8056641" StyleName="Title" Font="Baskerville Old Face, 12pt, style=Bold" ForeColor="SaddleBrown">
+          <StylePriority Ref="38" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item6>
+      </Controls>
+    </Item3>
+    <Item4 Ref="39" ControlType="GroupHeaderBand" Name="GroupHeader1" GroupUnion="WithFirstDetail" HeightF="258">
+      <Controls>
+        <Item1 Ref="40" ControlType="XRLabel" Name="label47" Multiline="true" Text="label47" TextAlignment="TopRight" SizeF="98.74982,23" LocationFloat="749.417,228" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="41" EventName="BeforePrint" PropertyName="Text" Expression="[FEE_AMOUNT]" />
+          </ExpressionBindings>
+        </Item1>
+        <Item2 Ref="42" ControlType="XRLabel" Name="label48" Multiline="true" Text="label48" SizeF="149.634277,23" LocationFloat="599.782654,230" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="43" EventName="BeforePrint" PropertyName="Text" Expression="[FEE_DESC]" />
+          </ExpressionBindings>
+        </Item2>
+        <Item3 Ref="44" ControlType="XRLabel" Name="label46" Multiline="true" Text="label46" TextAlignment="TopRight" SizeF="100,23" LocationFloat="450.467468,230" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="45" EventName="BeforePrint" PropertyName="Text" Expression="[FEE_AMOUNT]" />
+          </ExpressionBindings>
+        </Item3>
+        <Item4 Ref="46" ControlType="XRLabel" Name="label45" Multiline="true" Text="label45" SizeF="150.4675,23" LocationFloat="300,230" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="47" EventName="BeforePrint" PropertyName="Text" Expression="[FEE_DESC]" />
+          </ExpressionBindings>
+        </Item4>
+        <Item5 Ref="48" ControlType="XRLabel" Name="label44" Multiline="true" Text="label44" TextAlignment="TopRight" SizeF="100,23" LocationFloat="152.55101,230" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="49" EventName="BeforePrint" PropertyName="Text" Expression="[FEE_AMOUNT]" />
+          </ExpressionBindings>
+        </Item5>
+        <Item6 Ref="50" ControlType="XRLabel" Name="label43" Multiline="true" Text="label43" SizeF="150.4675,22.9999981" LocationFloat="2.08349872,230" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="51" EventName="BeforePrint" PropertyName="Text" Expression="[FEE_DESC]" />
+          </ExpressionBindings>
+        </Item6>
+        <Item7 Ref="52" ControlType="XRTable" Name="table7" SizeF="249.217346,27.9999981" LocationFloat="598.949463,200">
+          <Rows>
+            <Item1 Ref="53" ControlType="XRTableRow" Name="tableRow7" Weight="1">
+              <Cells>
+                <Item1 Ref="54" ControlType="XRTableCell" Name="tableCell13" Weight="0.31239580636912978" Text="FEE TYPE" TextAlignment="MiddleLeft" StyleName="DetailCaption1" Font="Arial, 9pt, style=Bold" BackColor="DarkSlateGray">
+                  <StylePriority Ref="55" UseFont="false" UseBackColor="false" UseTextAlignment="false" />
+                </Item1>
+                <Item2 Ref="56" ControlType="XRTableCell" Name="tableCell14" Weight="0.20502126690402472" Text="FEE AMOUNT" TextAlignment="MiddleCenter" StyleName="DetailCaption1" Font="Arial, 9pt, style=Bold" BackColor="DarkSlateGray">
+                  <StylePriority Ref="57" UseFont="false" UseBackColor="false" UseTextAlignment="false" />
+                </Item2>
+              </Cells>
+            </Item1>
+          </Rows>
+        </Item7>
+        <Item8 Ref="58" ControlType="XRLabel" Name="label37" Multiline="true" Text="label14" TextAlignment="TopLeft" SizeF="148.384,23" LocationFloat="700.615967,92.00002" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="59" EventName="BeforePrint" PropertyName="Text" Expression="[BILL_MONTH]" />
+          </ExpressionBindings>
+          <StylePriority Ref="60" UseFont="false" UseTextAlignment="false" />
+        </Item8>
+        <Item9 Ref="61" ControlType="XRLabel" Name="label38" Multiline="true" Text="label6" TextAlignment="TopLeft" SizeF="148.384,23" LocationFloat="700.615967,0" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="62" EventName="BeforePrint" PropertyName="Text" Expression="[CAMPUS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="63" UseFont="false" UseTextAlignment="false" />
+        </Item9>
+        <Item10 Ref="64" ControlType="XRLabel" Name="label39" Multiline="true" Text="label12" TextAlignment="TopLeft" SizeF="148.384,23" LocationFloat="700.615967,69.00004" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="65" EventName="BeforePrint" PropertyName="Text" Expression="[STUDENT_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="66" UseFont="false" UseTextAlignment="false" />
+        </Item10>
+        <Item11 Ref="67" ControlType="XRLabel" Name="label40" Multiline="true" Text="label10" TextAlignment="TopLeft" SizeF="148.384,23.0000038" LocationFloat="700.615967,46.00001" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="68" EventName="BeforePrint" PropertyName="Text" Expression="[SECTION_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="69" UseFont="false" UseTextAlignment="false" />
+        </Item11>
+        <Item12 Ref="70" ControlType="XRLabel" Name="label41" Multiline="true" Text="label8" TextAlignment="TopLeft" SizeF="148.384,23.0000019" LocationFloat="700.615967,23.0000057" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="71" EventName="BeforePrint" PropertyName="Text" Expression="[CLASS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="72" UseFont="false" UseTextAlignment="false" />
+        </Item12>
+        <Item13 Ref="73" ControlType="XRLabel" Name="label42" Multiline="true" Text="label16" TextAlignment="TopLeft" SizeF="148.384,23" LocationFloat="700.615967,115" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="74" EventName="BeforePrint" PropertyName="Text" Expression="[STUDENT_FEE_DTL_ID]" />
+          </ExpressionBindings>
+          <StylePriority Ref="75" UseFont="false" UseTextAlignment="false" />
+        </Item13>
+        <Item14 Ref="76" ControlType="XRLabel" Name="label31" Multiline="true" Text="Fee No.:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="600.615967,115" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="77" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item14>
+        <Item15 Ref="78" ControlType="XRLabel" Name="label32" Multiline="true" Text="Bill Month:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="600.616,92.00002" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="79" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item15>
+        <Item16 Ref="80" ControlType="XRLabel" Name="label33" Multiline="true" Text="Student Name:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="600.616,69.00004" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="81" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item16>
+        <Item17 Ref="82" ControlType="XRLabel" Name="label34" Multiline="true" Text="Section Name:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="600.616,46.00001" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="83" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item17>
+        <Item18 Ref="84" ControlType="XRLabel" Name="label35" Multiline="true" Text="Class Name:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="600.616,23.0000057" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="85" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item18>
+        <Item19 Ref="86" ControlType="XRLabel" Name="label36" Multiline="true" Text="Campus Name:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="600.616,0" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="87" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item19>
+        <Item20 Ref="88" ControlType="XRLabel" Name="label23" Multiline="true" Text="label16" TextAlignment="TopLeft" SizeF="148.384,23" LocationFloat="400.833344,115" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="89" EventName="BeforePrint" PropertyName="Text" Expression="[STUDENT_FEE_DTL_ID]" />
+          </ExpressionBindings>
+          <StylePriority Ref="90" UseFont="false" UseTextAlignment="false" />
+        </Item20>
+        <Item21 Ref="91" ControlType="XRLabel" Name="label24" Multiline="true" Text="label8" TextAlignment="TopLeft" SizeF="148.384,23.0000019" LocationFloat="400.833344,23.0000057" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="92" EventName="BeforePrint" PropertyName="Text" Expression="[CLASS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="93" UseFont="false" UseTextAlignment="false" />
+        </Item21>
+        <Item22 Ref="94" ControlType="XRLabel" Name="label25" Multiline="true" Text="label10" TextAlignment="TopLeft" SizeF="148.384,23.0000038" LocationFloat="400.833344,46.00001" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="95" EventName="BeforePrint" PropertyName="Text" Expression="[SECTION_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="96" UseFont="false" UseTextAlignment="false" />
+        </Item22>
+        <Item23 Ref="97" ControlType="XRLabel" Name="label26" Multiline="true" Text="label12" TextAlignment="TopLeft" SizeF="148.384,23" LocationFloat="400.833344,69.00004" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="98" EventName="BeforePrint" PropertyName="Text" Expression="[STUDENT_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="99" UseFont="false" UseTextAlignment="false" />
+        </Item23>
+        <Item24 Ref="100" ControlType="XRLabel" Name="label27" Multiline="true" Text="label14" TextAlignment="TopLeft" SizeF="148.384,23" LocationFloat="400.833344,92.00002" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="101" EventName="BeforePrint" PropertyName="Text" Expression="[BILL_MONTH]" />
+          </ExpressionBindings>
+          <StylePriority Ref="102" UseFont="false" UseTextAlignment="false" />
+        </Item24>
+        <Item25 Ref="103" ControlType="XRLabel" Name="label28" Multiline="true" Text="label6" TextAlignment="TopLeft" SizeF="148.384,23" LocationFloat="400.833344,0" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="104" EventName="BeforePrint" PropertyName="Text" Expression="[CAMPUS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="105" UseFont="false" UseTextAlignment="false" />
+        </Item25>
+        <Item26 Ref="106" ControlType="XRLabel" Name="label17" Multiline="true" Text="Fee No.:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="300.833374,115" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="107" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item26>
+        <Item27 Ref="108" ControlType="XRLabel" Name="label18" Multiline="true" Text="Class Name:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="300.833344,23.0000057" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="109" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item27>
+        <Item28 Ref="110" ControlType="XRLabel" Name="label19" Multiline="true" Text="Section Name:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="300.833344,46.00001" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="111" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item28>
+        <Item29 Ref="112" ControlType="XRLabel" Name="label20" Multiline="true" Text="Student Name:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="300.833374,69.00004" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="113" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item29>
+        <Item30 Ref="114" ControlType="XRLabel" Name="label21" Multiline="true" Text="Bill Month:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="300.833344,92.00002" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="115" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item30>
+        <Item31 Ref="116" ControlType="XRLabel" Name="label22" Multiline="true" Text="Campus Name:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="300.833344,0" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="117" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item31>
+        <Item32 Ref="118" ControlType="XRLabel" Name="label16" Multiline="true" Text="label16" TextAlignment="TopLeft" SizeF="148.384,23" LocationFloat="100.833344,115" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="119" EventName="BeforePrint" PropertyName="Text" Expression="[STUDENT_FEE_DTL_ID]" />
+          </ExpressionBindings>
+          <StylePriority Ref="120" UseFont="false" UseTextAlignment="false" />
+        </Item32>
+        <Item33 Ref="121" ControlType="XRLabel" Name="label15" Multiline="true" Text="Fee No.:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="0,115" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="122" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item33>
+        <Item34 Ref="123" ControlType="XRLabel" Name="label14" Multiline="true" Text="label14" TextAlignment="TopLeft" SizeF="148.384,23" LocationFloat="100.833336,92.00002" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="124" EventName="BeforePrint" PropertyName="Text" Expression="[BILL_MONTH]" />
+          </ExpressionBindings>
+          <StylePriority Ref="125" UseFont="false" UseTextAlignment="false" />
+        </Item34>
+        <Item35 Ref="126" ControlType="XRLabel" Name="label13" Multiline="true" Text="Bill Month:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="0,92.00002" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="127" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item35>
+        <Item36 Ref="128" ControlType="XRLabel" Name="label12" Multiline="true" Text="label12" TextAlignment="TopLeft" SizeF="148.384,23" LocationFloat="100.833336,69.00004" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="129" EventName="BeforePrint" PropertyName="Text" Expression="[STUDENT_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="130" UseFont="false" UseTextAlignment="false" />
+        </Item36>
+        <Item37 Ref="131" ControlType="XRLabel" Name="label11" Multiline="true" Text="Student Name:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="0,69.00004" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="132" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item37>
+        <Item38 Ref="133" ControlType="XRLabel" Name="label10" Multiline="true" Text="label10" TextAlignment="TopLeft" SizeF="148.384,23.0000038" LocationFloat="100.833336,46.00001" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="134" EventName="BeforePrint" PropertyName="Text" Expression="[SECTION_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="135" UseFont="false" UseTextAlignment="false" />
+        </Item38>
+        <Item39 Ref="136" ControlType="XRLabel" Name="label9" Multiline="true" Text="Section Name:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="0,46.00001" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="137" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item39>
+        <Item40 Ref="138" ControlType="XRLabel" Name="label8" Multiline="true" Text="label8" TextAlignment="TopLeft" SizeF="148.384,23.0000019" LocationFloat="100.833336,23.0000057" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="139" EventName="BeforePrint" PropertyName="Text" Expression="[CLASS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="140" UseFont="false" UseTextAlignment="false" />
+        </Item40>
+        <Item41 Ref="141" ControlType="XRLabel" Name="label7" Multiline="true" Text="Class Name:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="0,23.0000057" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="142" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item41>
+        <Item42 Ref="143" ControlType="XRLabel" Name="label6" Multiline="true" Text="label6" TextAlignment="TopLeft" SizeF="148.384,23" LocationFloat="100.833336,0" Font="Baskerville Old Face, 10pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="144" EventName="BeforePrint" PropertyName="Text" Expression="[CAMPUS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="145" UseFont="false" UseTextAlignment="false" />
+        </Item42>
+        <Item43 Ref="146" ControlType="XRLabel" Name="label5" Multiline="true" Text="Campus Name:" TextAlignment="TopLeft" SizeF="100,23" LocationFloat="0,0" Font="Baskerville Old Face, 10pt, style=Bold" ForeColor="Teal" Padding="2,2,0,0,100">
+          <StylePriority Ref="147" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item43>
+        <Item44 Ref="148" ControlType="XRTable" Name="table4" SizeF="249.217346,27.9999981" LocationFloat="300,200">
+          <Rows>
+            <Item1 Ref="149" ControlType="XRTableRow" Name="tableRow4" Weight="1">
+              <Cells>
+                <Item1 Ref="150" ControlType="XRTableCell" Name="tableCell4" Weight="0.31239580636912978" Text="FEE TYPE" TextAlignment="MiddleLeft" StyleName="DetailCaption1" Font="Arial, 9pt, style=Bold" BackColor="DarkSlateGray">
+                  <StylePriority Ref="151" UseFont="false" UseBackColor="false" UseTextAlignment="false" />
+                </Item1>
+                <Item2 Ref="152" ControlType="XRTableCell" Name="tableCell8" Weight="0.20502126690402472" Text="FEE AMOUNT" TextAlignment="MiddleCenter" StyleName="DetailCaption1" Font="Arial, 9pt, style=Bold" BackColor="DarkSlateGray">
+                  <StylePriority Ref="153" UseFont="false" UseBackColor="false" UseTextAlignment="false" />
+                </Item2>
+              </Cells>
+            </Item1>
+          </Rows>
+        </Item44>
+        <Item45 Ref="154" ControlType="XRTable" Name="table1" SizeF="249.217346,27.9999981" LocationFloat="2.08349872,200">
+          <Rows>
+            <Item1 Ref="155" ControlType="XRTableRow" Name="tableRow1" Weight="1">
+              <Cells>
+                <Item1 Ref="156" ControlType="XRTableCell" Name="tableCell2" Weight="0.31239580636912978" Text="FEE TYPE" TextAlignment="MiddleLeft" StyleName="DetailCaption1" Font="Arial, 9pt, style=Bold" BackColor="DarkSlateGray">
+                  <StylePriority Ref="157" UseFont="false" UseBackColor="false" UseTextAlignment="false" />
+                </Item1>
+                <Item2 Ref="158" ControlType="XRTableCell" Name="tableCell3" Weight="0.20502126690402472" Text="FEE AMOUNT" TextAlignment="MiddleCenter" StyleName="DetailCaption1" Font="Arial, 9pt, style=Bold" BackColor="DarkSlateGray">
+                  <StylePriority Ref="159" UseFont="false" UseBackColor="false" UseTextAlignment="false" />
+                </Item2>
+              </Cells>
+            </Item1>
+          </Rows>
+        </Item45>
+      </Controls>
+    </Item4>
+    <Item5 Ref="160" ControlType="DetailBand" Name="Detail" HeightF="35.3333549">
+      <Controls>
+        <Item1 Ref="161" ControlType="XRPageBreak" Name="pageBreak1" LocationFloat="0,0" />
+      </Controls>
+    </Item5>
+  </Bands>
+  <StyleSheet>
+    <Item1 Ref="162" Name="Title" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 14.25pt" ForeColor="255,75,75,75" BackColor="Transparent" BorderColor="Black" Sides="None" StringFormat="Near;Near;0;None;Character;Default" BorderWidthSerializable="1" />
+    <Item2 Ref="163" Name="DetailCaption1" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt, style=Bold" ForeColor="White" BackColor="255,75,75,75" BorderColor="White" Sides="Left" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item3 Ref="164" Name="DetailData1" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt" ForeColor="Black" BorderColor="Transparent" Sides="Left" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item4 Ref="165" Name="DetailData3_Odd" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt" ForeColor="Black" BackColor="255,231,231,231" BorderColor="Transparent" Sides="None" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+    <Item5 Ref="166" Name="PageInfo" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt, style=Bold" ForeColor="255,75,75,75" StringFormat="Near;Near;0;None;Character;Default" />
+  </StyleSheet>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.v21.1" Name="sqlDataSource1" Base64="PFNxbERhdGFTb3VyY2UgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxDb25uZWN0aW9uIE5hbWU9IkRldlJlcG9ydENvbm5lY3Rpb24iIEZyb21BcHBDb25maWc9InRydWUiIC8+PFF1ZXJ5IFR5cGU9IlN0b3JlZFByb2NRdWVyeSIgTmFtZT0iRU1TX0RQR19SUFRfRU1TX0ZFRV9JTkZPUk1BVElPTl9EUERfUlBUX0VNU19GRUVfSU5GT1JNQVRJT04iPjxQYXJhbWV0ZXIgTmFtZT0iUF9PUkdfQ09ERSIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/T1JHX0NPREUpPC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBOYW1lPSJQX0NBTVBVU19DT0RFIiBUeXBlPSJEZXZFeHByZXNzLkRhdGFBY2Nlc3MuRXhwcmVzc2lvbiI+KFN5c3RlbS5TdHJpbmcpKD9DQU1QVVNfQ09ERSk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IlBfQ0xBU1NfQ09ERSIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/Q0xBU1NfQ09ERSk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IlBfR1JPVVBfQ09ERSIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/R1JPVVBfQ09ERSk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IlBfVkVSU0lPTl9DT0RFIiBUeXBlPSJEZXZFeHByZXNzLkRhdGFBY2Nlc3MuRXhwcmVzc2lvbiI+KFN5c3RlbS5TdHJpbmcpKD9WRVJTSU9OX0NPREUpPC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBOYW1lPSJQX1NFQ1RJT05fQ09ERSIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/U0VDVElPTl9DT0RFKTwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgTmFtZT0iUF9TRVNTSU9OX0NPREUiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP1NFU1NJT05fQ09ERSk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IlBfU0hJRlRfQ09ERSIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/U0hJRlRfQ09ERSk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IlBfU1RBUlRfQklMTF9NT05USCIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/U1RBUlRfQklMTF9NT05USCk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IlBfRU5EX0JJTExfTU9OVEgiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP0VORF9CSUxMX01PTlRIKTwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgTmFtZT0iUF9QUk9DRVNTX0JJTExfTU9OVEgiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP1BST0NFU1NfQklMTF9NT05USCk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IlBfU1RVREVOVF9DT0RFIiBUeXBlPSJEZXZFeHByZXNzLkRhdGFBY2Nlc3MuRXhwcmVzc2lvbiI+KFN5c3RlbS5TdHJpbmcpKD9TVFVERU5UX0NPREUpPC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBOYW1lPSJQX1VTRVJfSUQiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP1VTRVJfQ09ERSk8L1BhcmFtZXRlcj48UHJvY05hbWU+IkVNUyIuIkRQR19SUFRfRU1TX0ZFRV9JTkZPUk1BVElPTiIuIkRQRF9SUFRfRU1TX0ZFRV9JTkZPUk1BVElPTiI8L1Byb2NOYW1lPjwvUXVlcnk+PFJlc3VsdFNjaGVtYT48RGF0YVNldCBOYW1lPSJzcWxEYXRhU291cmNlMSI+PFZpZXcgTmFtZT0iRU1TX0RQR19SUFRfRU1TX0ZFRV9JTkZPUk1BVElPTl9EUERfUlBUX0VNU19GRUVfSU5GT1JNQVRJT04iPjxGaWVsZCBOYW1lPSJTVFVERU5UX0ZFRV9EVExfSUQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik9SR19DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik9SR19OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNBTVBVU19DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNBTVBVU19OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNMQVNTX0NPREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ0xBU1NfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJWRVJTSU9OX0NPREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVkVSU0lPTl9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNFQ1RJT05fQ09ERSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTRUNUSU9OX05BTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0VTU0lPTl9DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNFU1NJT05fTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTSElGVF9DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNISUZUX05BTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iR1JPVVBfQ09ERSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJHUk9VUF9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNUQVJUX0JJTExfTU9OVEgiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRU5EX0JJTExfTU9OVEgiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU1RVREVOVF9DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNUVURFTlRfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUT1RBTF9BTU9VTlQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IkJJTExfTlVNQkVSIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJJTExfTU9OVEgiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRkVFX0NPREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRkVFX0RFU0MiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRkVFX0FNT1VOVCIgVHlwZT0iRGVjaW1hbCIgLz48L1ZpZXc+PC9EYXRhU2V0PjwvUmVzdWx0U2NoZW1hPjxDb25uZWN0aW9uT3B0aW9ucyBDbG9zZUNvbm5lY3Rpb249InRydWUiIC8+PC9TcWxEYXRhU291cmNlPg==" />
+  </ComponentStorage>
+</XtraReportsLayoutSerializer>

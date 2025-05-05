@@ -1,0 +1,14 @@
+﻿using StudentWebAPI.Models.Student;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace StudentWebAPI.Models.ViewModel
+{
+    public class QuickAdmissionViewModel
+    {
+        public List<StudentQuickAdmissionInfoVM> sheet1 { get; set; }
+
+    }
+}

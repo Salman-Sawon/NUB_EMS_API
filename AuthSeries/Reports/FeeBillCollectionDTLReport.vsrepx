@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="21.1.5.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="FeeBillCollectionDTLReport" ScriptsSource="&#xD;&#xA;private void label78_PrintOnPage(object sender, DevExpress.XtraReports.UI.PrintOnPageEventArgs e) {&#xD;&#xA;          XRLabel label = (XRLabel)sender;&#xD;&#xA; double  AMOUNT = Convert.ToDouble(label.Text);&#xD;&#xA;            string txt = changeToWords(AMOUNT.ToString());&#xD;&#xA;            (sender as XRLabel).Text = &quot;In Words :&quot; + &quot; &quot; + txt + &quot;Taka Only&quot;;&#xD;&#xA;        &#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA; public static String changeToWords(String numb)&#xD;&#xA;        {&#xD;&#xA;            String val = &quot;&quot;;&#xD;&#xA;            String wholeNo = numb;&#xD;&#xA;            String points = &quot;&quot;;&#xD;&#xA;            String andStr = &quot;&quot;;&#xD;&#xA;            String pointStr = &quot;&quot;;&#xD;&#xA;            String endStr = &quot;&quot;;&#xD;&#xA;            try&#xD;&#xA;            {&#xD;&#xA;                int decimalPlace = numb.IndexOf(&quot;.&quot;);&#xD;&#xA;                if (decimalPlace &gt; 0)&#xD;&#xA;                {&#xD;&#xA;                    wholeNo = numb.Substring(0, decimalPlace);&#xD;&#xA;                    points = numb.Substring(decimalPlace + 1);&#xD;&#xA;                    if (Convert.ToInt32(points) &gt; 0)&#xD;&#xA;                    {&#xD;&#xA;                        andStr = &quot;point&quot;;&#xD;&#xA;                        // just to separate whole numbers from points  &#xD;&#xA;                        pointStr = translateCents(points);&#xD;&#xA;                    }&#xD;&#xA;                }&#xD;&#xA;                val = String.Format(&quot;{0} {1}{2} {3}&quot;, translateWholeNumber(wholeNo).Trim(), andStr, pointStr, endStr);&#xD;&#xA;&#xD;&#xA;            }&#xD;&#xA;            catch&#xD;&#xA;            {&#xD;&#xA;&#xD;&#xA;            }&#xD;&#xA;            return val;&#xD;&#xA;        }     &#xD;&#xA;           &#xD;&#xA;        private static String translateWholeNumber(String number)&#xD;&#xA;        {&#xD;&#xA;            string word = &quot;&quot;;&#xD;&#xA;            try&#xD;&#xA;            {&#xD;&#xA;                bool beginsZero = false;&#xD;&#xA;                //tests for 0XX  &#xD;&#xA;                bool isDone = false;&#xD;&#xA;                //test if already translated  &#xD;&#xA;                double dblAmt = (Convert.ToDouble(number));&#xD;&#xA;                //if ((dblAmt &gt; 0) &amp;&amp; number.StartsWith(&quot;0&quot;))  &#xD;&#xA;                if (dblAmt &gt; 0)&#xD;&#xA;                {&#xD;&#xA;                    //test for zero or digit zero in a nuemric  &#xD;&#xA;                    beginsZero = number.StartsWith(&quot;0&quot;);&#xD;&#xA;&#xD;&#xA;                    int numDigits = number.Length;&#xD;&#xA;                    int pos = 0;&#xD;&#xA;                    //store digit grouping  &#xD;&#xA;                    String place = &quot;&quot;;&#xD;&#xA;                    //digit grouping name:hundres,thousand,etc...  &#xD;&#xA;                    switch (numDigits)&#xD;&#xA;                    {&#xD;&#xA;                        case 1:&#xD;&#xA;                            //ones' range  &#xD;&#xA;                            word = ones(number);&#xD;&#xA;                            isDone = true;&#xD;&#xA;                            break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                        case 2:&#xD;&#xA;                            //tens' range  &#xD;&#xA;                            word = tens(number);&#xD;&#xA;                            isDone = true;&#xD;&#xA;                            break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                        case 3:&#xD;&#xA;                            //hundreds' range  &#xD;&#xA;                            pos = (numDigits % 3) + 1;&#xD;&#xA;                            place = &quot; Hundred &quot;;&#xD;&#xA;                            break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                        //thousands' range  &#xD;&#xA;                        case 4:&#xD;&#xA;                        case 5:&#xD;&#xA;                        case 6:&#xD;&#xA;                            pos = (numDigits % 4) + 1;&#xD;&#xA;                            place = &quot; Thousand &quot;;&#xD;&#xA;                            break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                        //millions' range  &#xD;&#xA;                        case 7:&#xD;&#xA;                        case 8:&#xD;&#xA;                        case 9:&#xD;&#xA;                            pos = (numDigits % 7) + 1;&#xD;&#xA;                            place = &quot; Million &quot;;&#xD;&#xA;                            break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                        case 10:&#xD;&#xA;                            //Billions's range  &#xD;&#xA;                            pos = (numDigits % 10) + 1;&#xD;&#xA;                            place = &quot; Billion &quot;;&#xD;&#xA;                            break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;&#xD;&#xA;                        default:&#xD;&#xA;                            //add extra case options for anything above Billion...  &#xD;&#xA;                            isDone = true;&#xD;&#xA;                            break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;&#xD;&#xA;                    }&#xD;&#xA;                    if (!isDone)&#xD;&#xA;                    {&#xD;&#xA;                        //if transalation is not done, continue...(Recursion comes in now!!)  &#xD;&#xA;                        word = translateWholeNumber(number.Substring(0, pos)) + place + translateWholeNumber(number.Substring(pos));&#xD;&#xA;                        //check for trailing zeros  &#xD;&#xA;                        if (beginsZero)&#xD;&#xA;                        {&#xD;&#xA;                            word = &quot; and &quot; + word.Trim();&#xD;&#xA;                        }&#xD;&#xA;                    }&#xD;&#xA;                    //ignore digit grouping names  &#xD;&#xA;                    if (word.Trim().Equals(place.Trim()))&#xD;&#xA;                    {&#xD;&#xA;                        word = &quot;&quot;;&#xD;&#xA;                    }&#xD;&#xA;                }&#xD;&#xA;&#xD;&#xA;            }&#xD;&#xA;            catch&#xD;&#xA;            {&#xD;&#xA;&#xD;&#xA;            }&#xD;&#xA;            return word.Trim();&#xD;&#xA;        }&#xD;&#xA;        private static String tens(String digit)&#xD;&#xA;        {&#xD;&#xA;            int digt = Convert.ToInt32(digit);&#xD;&#xA;            String name = null;&#xD;&#xA;            switch (digt)&#xD;&#xA;            {&#xD;&#xA;                case 10:&#xD;&#xA;                    name = &quot;Ten&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select        \  &#xD;&#xA;                case 11:&#xD;&#xA;                    name = &quot;Eleven&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 12:&#xD;&#xA;                    name = &quot;Twelve&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 13:&#xD;&#xA;                    name = &quot;Thirteen&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 14:&#xD;&#xA;                    name = &quot;Fourteen&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 15:&#xD;&#xA;                    name = &quot;Fifteen&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 16:&#xD;&#xA;                    name = &quot;Sixteen&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 17:&#xD;&#xA;                    name = &quot;Seventeen&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 18:&#xD;&#xA;                    name = &quot;Eighteen&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 19:&#xD;&#xA;                    name = &quot;Nineteen&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 20:&#xD;&#xA;                    name = &quot;Twenty&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 30:&#xD;&#xA;                    name = &quot;Thirty&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 40:&#xD;&#xA;                    name = &quot;Fourty&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 50:&#xD;&#xA;                    name = &quot;Fifty&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 60:&#xD;&#xA;                    name = &quot;Sixty&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 70:&#xD;&#xA;                    name = &quot;Seventy&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 80:&#xD;&#xA;                    name = &quot;Eighty&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 90:&#xD;&#xA;                    name = &quot;Ninety&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                default:&#xD;&#xA;                    if (digt &gt; 0)&#xD;&#xA;                    {&#xD;&#xA;                        name = (tens(digit.Substring(0, 1) + &quot;0&quot;) + &quot; &quot;) + ones(digit.Substring(1));&#xD;&#xA;                    }&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;            }&#xD;&#xA;            return name;&#xD;&#xA;        }&#xD;&#xA;        private static String ones(String digit)&#xD;&#xA;        {&#xD;&#xA;            int digt = Convert.ToInt32(digit);&#xD;&#xA;            String name = &quot;&quot;;&#xD;&#xA;            switch (digt)&#xD;&#xA;            {&#xD;&#xA;                case 1:&#xD;&#xA;                    name = &quot;One&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 2:&#xD;&#xA;                    name = &quot;Two&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 3:&#xD;&#xA;                    name = &quot;Three&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 4:&#xD;&#xA;                    name = &quot;Four&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 5:&#xD;&#xA;                    name = &quot;Five&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 6:&#xD;&#xA;                    name = &quot;Six&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 7:&#xD;&#xA;                    name = &quot;Seven&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 8:&#xD;&#xA;                    name = &quot;Eight&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;                case 9:&#xD;&#xA;                    name = &quot;Nine&quot;;&#xD;&#xA;                    break; // TODO: might not be correct. Was : Exit Select  &#xD;&#xA;&#xD;&#xA;            }&#xD;&#xA;            return name;&#xD;&#xA;        }&#xD;&#xA;        private static String translateCents(String cents)&#xD;&#xA;        {&#xD;&#xA;            String cts = &quot;&quot;;&#xD;&#xA;            String digit = &quot;&quot;;&#xD;&#xA;            String engOne = &quot;&quot;;&#xD;&#xA;            for (int i = 0; i &lt;= cents.Length - 1; i++)&#xD;&#xA;            {&#xD;&#xA;                digit = cents[i].ToString();&#xD;&#xA;                if (digit.Equals(&quot;0&quot;))&#xD;&#xA;                {&#xD;&#xA;                    engOne = &quot;Zero&quot;;&#xD;&#xA;                }&#xD;&#xA;                else&#xD;&#xA;                {&#xD;&#xA;                    engOne = ones(digit);&#xD;&#xA;                }&#xD;&#xA;                cts += &quot; &quot; + engOne;&#xD;&#xA;            }&#xD;&#xA;            return cts;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;" SnapGridSize="9.84252" Landscape="true" Margins="0, 0, 174, 83" PageWidth="1100" PageHeight="850" Version="21.1" DataMember="EMS_DPG_EMS_BILL_COLL_PROCESS_DPD_BILL_COLLECTION_DTL" DataSource="#Ref-0" Font="Arial, 9.75pt">
+  <Extensions>
+    <Item1 Ref="2" Key="VSReportExtInfo" Value=".vsrepx" />
+  </Extensions>
+  <Parameters>
+    <Item1 Ref="4" Name="ORG_CODE" />
+    <Item2 Ref="5" Name="STUDENT_CODE" />
+    <Item3 Ref="6" Name="COLLECTION_ID" />
+    <Item4 Ref="7" Name="USER_CODE" />
+  </Parameters>
+  <Bands>
+    <Item1 Ref="8" ControlType="TopMarginBand" Name="TopMargin" HeightF="174" BackColor="Transparent">
+      <Controls>
+        <Item1 Ref="9" ControlType="XRLabel" Name="label47" Multiline="true" Text="label44" TextAlignment="MiddleCenter" SizeF="215.851761,23" LocationFloat="810.5132,129.6668" Font="Microsoft Sans Serif, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="10" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[CAMPUS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="11" UseFont="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="12" ControlType="XRLabel" Name="label45" Multiline="true" Text="label44" TextAlignment="MiddleCenter" SizeF="215.851761,23" LocationFloat="436.666656,129.6668" Font="Microsoft Sans Serif, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="13" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[CAMPUS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="14" UseFont="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="15" ControlType="XRLabel" Name="label44" Multiline="true" Text="label44" TextAlignment="MiddleCenter" SizeF="215.851761,23" LocationFloat="74.12012,129.66655" Font="Microsoft Sans Serif, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="16" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[CAMPUS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="17" UseFont="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="18" ControlType="XRLabel" Name="label25" Multiline="true" Text="label25" TextAlignment="MiddleLeft" SizeF="64.56372,22.9999924" LocationFloat="289.9718,76.99988" Font="Microsoft Sans Serif, 11pt, style=Bold" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="19" EventName="BeforePrint" PropertyName="Text" Expression="[VOUCH_NO]" />
+          </ExpressionBindings>
+          <StylePriority Ref="20" UseFont="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="21" ControlType="XRLabel" Name="label31" Multiline="true" Text="Trans  ID           " TextAlignment="MiddleLeft" SizeF="73.86505,22.9999847" LocationFloat="216.1068,53.9999" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="22" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="23" ControlType="XRLabel" Name="label32" Multiline="true" Text="label21" TextAlignment="MiddleLeft" SizeF="64.56372,22.9999962" LocationFloat="289.9718,53.9999275" Font="Microsoft Sans Serif, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="24" EventName="BeforePrint" PropertyName="Text" Expression="[TRANS_ID]" />
+          </ExpressionBindings>
+          <StylePriority Ref="25" UseFont="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="26" ControlType="XRLabel" Name="label35" Multiline="true" Text="Vouch No." TextAlignment="MiddleLeft" SizeF="73.86505,22.9999847" LocationFloat="216.1068,77.0000839" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="27" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item7>
+        <Item8 Ref="28" ControlType="XRLabel" Name="label23" Multiline="true" Text="label25" TextAlignment="MiddleLeft" SizeF="61.13501,22.9999924" LocationFloat="1038.865,76.99993" Font="Microsoft Sans Serif, 11pt, style=Bold" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="29" EventName="BeforePrint" PropertyName="Text" Expression="[VOUCH_NO]" />
+          </ExpressionBindings>
+          <StylePriority Ref="30" UseFont="false" UseTextAlignment="false" />
+        </Item8>
+        <Item9 Ref="31" ControlType="XRLabel" Name="label24" Multiline="true" Text="Trans  ID           " TextAlignment="MiddleLeft" SizeF="73.86505,22.9999847" LocationFloat="965,53.99995" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="32" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item9>
+        <Item10 Ref="33" ControlType="XRLabel" Name="label26" Multiline="true" Text="label21" TextAlignment="MiddleLeft" SizeF="61.13501,22.9999924" LocationFloat="1038.865,53.9999771" Font="Microsoft Sans Serif, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="34" EventName="BeforePrint" PropertyName="Text" Expression="[TRANS_ID]" />
+          </ExpressionBindings>
+          <StylePriority Ref="35" UseFont="false" UseTextAlignment="false" />
+        </Item10>
+        <Item11 Ref="36" ControlType="XRLabel" Name="label30" Multiline="true" Text="Vouch No." TextAlignment="MiddleLeft" SizeF="73.86505,22.9999847" LocationFloat="965,77.00014" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="37" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item11>
+        <Item12 Ref="38" ControlType="XRLabel" Name="label22" Multiline="true" Text="Vouch No." TextAlignment="MiddleLeft" SizeF="73.86505,22.9999847" LocationFloat="592.975647,77.00007" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="39" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item12>
+        <Item13 Ref="40" ControlType="XRLabel" Name="label1" Text="Student Copy" TextAlignment="TopCenter" SizeF="128.44,20.8609886" LocationFloat="118.327156,152.66655" StyleName="Title" Font="Microsoft Sans Serif, 10pt, style=Bold" ForeColor="Black">
+          <StylePriority Ref="41" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item13>
+        <Item14 Ref="42" ControlType="XRLabel" Name="label2" Multiline="true" Text="label2" TextAlignment="BottomCenter" SizeF="321.878174,29.6666718" LocationFloat="20.0871525,99.99987" Font="Microsoft Sans Serif, 14pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="43" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_ORG_IMAGE].[ORG_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="44" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item14>
+        <Item15 Ref="45" ControlType="XRLabel" Name="label59" Text="Bank Copy" TextAlignment="TopCenter" SizeF="128.6496,20.8609886" LocationFloat="859.071045,152.666809" StyleName="Title" Font="Microsoft Sans Serif, 10pt, style=Bold" ForeColor="Black">
+          <StylePriority Ref="46" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item15>
+        <Item16 Ref="47" ControlType="XRLabel" Name="label67" Multiline="true" Text="label2" TextAlignment="BottomCenter" SizeF="342.595032,29.6666718" LocationFloat="747.404968,100.00013" Font="Microsoft Sans Serif, 14pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="48" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_ORG_IMAGE].[ORG_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="49" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item16>
+        <Item17 Ref="50" ControlType="XRLabel" Name="label46" Multiline="true" Text="label2" TextAlignment="BottomCenter" SizeF="341.359833,29.6666489" LocationFloat="372.65976,100.000153" Font="Microsoft Sans Serif, 14pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="51" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_ORG_IMAGE].[ORG_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="52" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item17>
+        <Item18 Ref="53" ControlType="XRLabel" Name="label52" Multiline="true" Text="College Copy" TextAlignment="TopCenter" SizeF="128.439911,20.8609772" LocationFloat="476.044678,152.666824" StyleName="Title" Font="Microsoft Sans Serif, 10pt, style=Bold" ForeColor="Black">
+          <StylePriority Ref="54" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item18>
+        <Item19 Ref="55" ControlType="XRLabel" Name="label89" TextFormatString="{0:d/M/yyyy}" Multiline="true" Text="label4" TextAlignment="MiddleLeft" SizeF="107.5,23" LocationFloat="21.5092144,76.99999" Font="Microsoft Sans Serif, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="56" EventName="BeforePrint" PropertyName="Text" Expression="[VOUCH_DATE]" />
+          </ExpressionBindings>
+          <StylePriority Ref="57" UseFont="false" UseTextAlignment="false" />
+        </Item19>
+        <Item20 Ref="58" ControlType="XRLabel" Name="label27" TextFormatString="{0:d/M/yyyy}" Multiline="true" Text="label4" TextAlignment="MiddleLeft" SizeF="111.971283,23" LocationFloat="396.18576,76.99987" Font="Microsoft Sans Serif, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="59" EventName="BeforePrint" PropertyName="Text" Expression="[VOUCH_DATE]" />
+          </ExpressionBindings>
+          <StylePriority Ref="60" UseFont="false" UseTextAlignment="false" />
+        </Item20>
+        <Item21 Ref="61" ControlType="XRLabel" Name="label34" Multiline="true" Text="label21" TextAlignment="MiddleLeft" SizeF="64.56372,22.9999962" LocationFloat="666.840637,53.9999123" Font="Microsoft Sans Serif, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="62" EventName="BeforePrint" PropertyName="Text" Expression="[TRANS_ID]" />
+          </ExpressionBindings>
+          <StylePriority Ref="63" UseFont="false" UseTextAlignment="false" />
+        </Item21>
+        <Item22 Ref="64" ControlType="XRLabel" Name="label60" Multiline="true" Text="Trans  ID           " TextAlignment="MiddleLeft" SizeF="73.86505,22.9999847" LocationFloat="592.975647,53.99989" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="65" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item22>
+        <Item23 Ref="66" ControlType="XRLabel" Name="label66" TextFormatString="{0:d/M/yyyy}" Multiline="true" Text="label4" TextAlignment="MiddleLeft" SizeF="105.928223,23" LocationFloat="780.7382,77.00016" Font="Microsoft Sans Serif, 9pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="67" EventName="BeforePrint" PropertyName="Text" Expression="[VOUCH_DATE]" />
+          </ExpressionBindings>
+          <StylePriority Ref="68" UseFont="false" UseTextAlignment="false" />
+        </Item23>
+        <Item24 Ref="69" ControlType="XRLabel" Name="label33" Multiline="true" Text="label25" TextAlignment="MiddleLeft" SizeF="64.56372,22.9999924" LocationFloat="666.840637,76.99987" Font="Microsoft Sans Serif, 11pt, style=Bold" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="70" EventName="BeforePrint" PropertyName="Text" Expression="[VOUCH_NO]" />
+          </ExpressionBindings>
+          <StylePriority Ref="71" UseFont="false" UseTextAlignment="false" />
+        </Item24>
+        <Item25 Ref="72" ControlType="XRPictureBox" Name="pictureBox3" Sizing="ZoomImage" SizeF="78.33356,73.99983" LocationFloat="886.666443,26.0003281">
+          <ExpressionBindings>
+            <Item1 Ref="73" EventName="BeforePrint" PropertyName="ImageSource" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_ORG_IMAGE].[ORG_IMAGE]" />
+          </ExpressionBindings>
+        </Item25>
+        <Item26 Ref="74" ControlType="XRPictureBox" Name="pictureBox1" Sizing="ZoomImage" SizeF="74.1665344,73.99985" LocationFloat="508.157043,26.0003147">
+          <ExpressionBindings>
+            <Item1 Ref="75" EventName="BeforePrint" PropertyName="ImageSource" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_ORG_IMAGE].[ORG_IMAGE]" />
+          </ExpressionBindings>
+        </Item26>
+        <Item27 Ref="76" ControlType="XRPictureBox" Name="pictureBox2" Sizing="ZoomImage" SizeF="74.32416,73.99981" LocationFloat="129.009216,26.0003147">
+          <ExpressionBindings>
+            <Item1 Ref="77" EventName="BeforePrint" PropertyName="ImageSource" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_ORG_IMAGE].[ORG_IMAGE]" />
+          </ExpressionBindings>
+        </Item27>
+      </Controls>
+      <StylePriority Ref="78" UseBackColor="false" />
+    </Item1>
+    <Item2 Ref="79" ControlType="BottomMarginBand" Name="BottomMargin" HeightF="83">
+      <Controls>
+        <Item1 Ref="80" ControlType="XRLabel" Name="label40" Multiline="true" Text="Sign of Student" TextAlignment="TopCenter" SizeF="118.031738,23.0000076" LocationFloat="20.0871525,35.1665764" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="81" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="82" ControlType="XRLine" Name="line10" SizeF="140.268372,12.1666527" LocationFloat="165.77655,23.00003" />
+        <Item3 Ref="83" ControlType="XRLine" Name="line6" SizeF="118.031738,12.1665955" LocationFloat="20.0871525,23.00003" />
+        <Item4 Ref="84" ControlType="XRLabel" Name="label41" Multiline="true" Text="Sign of Receiver" TextAlignment="TopCenter" SizeF="140.268372,23.0000076" LocationFloat="165.77655,35.1665764" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="85" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="86" ControlType="XRLine" Name="line19" SizeF="140.268372,12.1666527" LocationFloat="925.0059,23.000082" />
+        <Item6 Ref="87" ControlType="XRLine" Name="line20" SizeF="118.031738,12.1665955" LocationFloat="779.3165,23.000082" />
+        <Item7 Ref="88" ControlType="XRLabel" Name="label39" Multiline="true" Text="Sign of Student" TextAlignment="TopCenter" SizeF="118.031738,23.0000076" LocationFloat="779.3165,35.166626" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="89" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item7>
+        <Item8 Ref="90" ControlType="XRLabel" Name="label38" Multiline="true" Text="Sign of Receiver" TextAlignment="TopCenter" SizeF="140.268372,23.0000076" LocationFloat="925.0059,35.166626" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="91" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item8>
+        <Item9 Ref="92" ControlType="XRLabel" Name="label19" Multiline="true" Text="Sign of Student" TextAlignment="TopCenter" SizeF="118.031738,23.0000076" LocationFloat="398.2882,35.1665764" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="93" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item9>
+        <Item10 Ref="94" ControlType="XRLine" Name="line5" SizeF="140.268372,12.1666527" LocationFloat="543.977539,22.999979" />
+        <Item11 Ref="95" ControlType="XRLine" Name="line4" SizeF="118.031738,12.1665955" LocationFloat="398.2882,22.999979" />
+        <Item12 Ref="96" ControlType="XRLabel" Name="label20" Multiline="true" Text="Sign of Receiver" TextAlignment="TopCenter" SizeF="140.268372,23.0000076" LocationFloat="543.977539,35.166626" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="97" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item12>
+      </Controls>
+    </Item2>
+    <Item3 Ref="98" ControlType="ReportHeaderBand" Name="ReportHeader" HeightF="116.861496">
+      <Controls>
+        <Item1 Ref="99" ControlType="XRLabel" Name="label3" Multiline="true" Text="label3" TextAlignment="MiddleLeft" SizeF="73.24097,23.0000076" LocationFloat="848.2385,24.861578" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="100" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[STUDENT_CODE]" />
+          </ExpressionBindings>
+          <StylePriority Ref="101" UseFont="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="102" ControlType="XRLabel" Name="label53" Multiline="true" Text="label17" TextAlignment="MiddleLeft" SizeF="76.87726,22.99997" LocationFloat="987.7208,24.8615017" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="103" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[SESSION_NAME_2]" />
+          </ExpressionBindings>
+          <StylePriority Ref="104" UseFont="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="105" ControlType="XRLabel" Name="label54" Multiline="true" Text="Session   " TextAlignment="MiddleLeft" SizeF="66.24133,22.9999619" LocationFloat="921.4795,24.8613224" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="106" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="107" ControlType="XRLabel" Name="label63" Multiline="true" Text="Class          " TextAlignment="MiddleLeft" SizeF="67.49988,22.9999619" LocationFloat="780.7384,47.8613777" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="108" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="109" ControlType="XRLabel" Name="label68" Multiline="true" Text="label5" TextAlignment="MiddleLeft" SizeF="216.35968,22.9999771" LocationFloat="848.2385,47.8615837" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="110" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[CLASS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="111" UseFont="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="112" ControlType="XRLabel" Name="label69" Multiline="true" Text="Std ID        " TextAlignment="MiddleLeft" SizeF="67.49998,23.0000153" LocationFloat="780.7384,24.8613224" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="113" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="114" ControlType="XRLabel" Name="label70" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="216.35968,23.0000153" LocationFloat="848.2385,1.86129248" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="115" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[STUDENT_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="116" UseFont="false" UseTextAlignment="false" />
+        </Item7>
+        <Item8 Ref="117" ControlType="XRLabel" Name="label71" Multiline="true" Text="Name       " TextAlignment="MiddleLeft" SizeF="67.49999,22.9999847" LocationFloat="780.7385,1.86134338" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="118" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item8>
+        <Item9 Ref="119" ControlType="XRLabel" Name="label72" Multiline="true" TextAlignment="MiddleLeft" SizeF="59.9074326,22.9999771" LocationFloat="848.2387,70.8615646" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="120" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[YEAR_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="121" UseFont="false" UseTextAlignment="false" />
+        </Item9>
+        <Item10 Ref="122" ControlType="XRLabel" Name="label73" Multiline="true" Text="Year" TextAlignment="MiddleLeft" SizeF="67.49988,22.9999619" LocationFloat="780.738647,70.8613358" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="123" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item10>
+        <Item11 Ref="124" ControlType="XRLabel" Name="label74" Multiline="true" Text="Phone" TextAlignment="MiddleLeft" SizeF="67.49988,22.9999619" LocationFloat="780.738342,93.86106" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="125" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item11>
+        <Item12 Ref="126" ControlType="XRLabel" Name="label75" Multiline="true" Text="label5" TextAlignment="MiddleLeft" SizeF="216.35968,22.9999771" LocationFloat="848.2384,93.86129" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="127" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[SMS_MOBILE_NUM]" />
+          </ExpressionBindings>
+          <StylePriority Ref="128" UseFont="false" UseTextAlignment="false" />
+        </Item12>
+        <Item13 Ref="129" ControlType="XRLabel" Name="label76" Multiline="true" Text="Semester" TextAlignment="MiddleLeft" SizeF="63.7404938,22.9999619" LocationFloat="908.1462,70.86159" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="130" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item13>
+        <Item14 Ref="131" ControlType="XRLabel" Name="label77" Multiline="true" TextAlignment="MiddleLeft" SizeF="92.7158051,22.9999771" LocationFloat="971.8867,70.8615646" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="132" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[SEMESTER_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="133" UseFont="false" UseTextAlignment="false" />
+        </Item14>
+        <Item15 Ref="134" ControlType="XRLabel" Name="label4" Multiline="true" Text="label3" TextAlignment="MiddleLeft" SizeF="73.24097,23.0000076" LocationFloat="465.783752,24.8618069" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="135" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[STUDENT_CODE]" />
+          </ExpressionBindings>
+          <StylePriority Ref="136" UseFont="false" UseTextAlignment="false" />
+        </Item15>
+        <Item16 Ref="137" ControlType="XRLabel" Name="label5" Multiline="true" Text="label17" TextAlignment="MiddleLeft" SizeF="76.87726,22.99997" LocationFloat="605.266052,24.86173" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="138" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[SESSION_NAME_2]" />
+          </ExpressionBindings>
+          <StylePriority Ref="139" UseFont="false" UseTextAlignment="false" />
+        </Item16>
+        <Item17 Ref="140" ControlType="XRLabel" Name="label6" Multiline="true" Text="Session   " TextAlignment="MiddleLeft" SizeF="66.24133,22.9999619" LocationFloat="539.0247,24.8615513" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="141" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item17>
+        <Item18 Ref="142" ControlType="XRLabel" Name="label7" Multiline="true" Text="Class          " TextAlignment="MiddleLeft" SizeF="67.49988,22.9999619" LocationFloat="398.28363,47.8616066" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="143" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item18>
+        <Item19 Ref="144" ControlType="XRLabel" Name="label8" Multiline="true" Text="label5" TextAlignment="MiddleLeft" SizeF="216.35968,22.9999771" LocationFloat="465.783752,47.8618126" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="145" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[CLASS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="146" UseFont="false" UseTextAlignment="false" />
+        </Item19>
+        <Item20 Ref="147" ControlType="XRLabel" Name="label9" Multiline="true" Text="Std ID        " TextAlignment="MiddleLeft" SizeF="67.49998,23.0000153" LocationFloat="398.28363,24.8615513" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="148" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item20>
+        <Item21 Ref="149" ControlType="XRLabel" Name="label10" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="216.35968,23.0000153" LocationFloat="465.783752,1.86152136" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="150" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[STUDENT_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="151" UseFont="false" UseTextAlignment="false" />
+        </Item21>
+        <Item22 Ref="152" ControlType="XRLabel" Name="label11" Multiline="true" Text="Name       " TextAlignment="MiddleLeft" SizeF="67.49999,22.9999847" LocationFloat="398.283752,1.86157227" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="153" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item22>
+        <Item23 Ref="154" ControlType="XRLabel" Name="label50" Multiline="true" TextAlignment="MiddleLeft" SizeF="59.9074326,22.9999771" LocationFloat="465.783936,70.86179" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="155" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[YEAR_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="156" UseFont="false" UseTextAlignment="false" />
+        </Item23>
+        <Item24 Ref="157" ControlType="XRLabel" Name="label51" Multiline="true" Text="Year" TextAlignment="MiddleLeft" SizeF="67.49988,22.9999619" LocationFloat="398.283844,70.8615646" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="158" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item24>
+        <Item25 Ref="159" ControlType="XRLabel" Name="label61" Multiline="true" Text="Phone" TextAlignment="MiddleLeft" SizeF="67.49988,22.9999619" LocationFloat="398.283539,93.86129" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="160" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item25>
+        <Item26 Ref="161" ControlType="XRLabel" Name="label62" Multiline="true" Text="label5" TextAlignment="MiddleLeft" SizeF="216.35968,22.9999771" LocationFloat="465.78363,93.86152" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="162" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[SMS_MOBILE_NUM]" />
+          </ExpressionBindings>
+          <StylePriority Ref="163" UseFont="false" UseTextAlignment="false" />
+        </Item26>
+        <Item27 Ref="164" ControlType="XRLabel" Name="label64" Multiline="true" Text="Semester" TextAlignment="MiddleLeft" SizeF="63.7404938,22.9999619" LocationFloat="525.6914,70.86182" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="165" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item27>
+        <Item28 Ref="166" ControlType="XRLabel" Name="label65" Multiline="true" TextAlignment="MiddleLeft" SizeF="92.7158051,22.9999771" LocationFloat="589.4319,70.86179" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="167" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[SEMESTER_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="168" UseFont="false" UseTextAlignment="false" />
+        </Item28>
+        <Item29 Ref="169" ControlType="XRLabel" Name="label57" Multiline="true" TextAlignment="MiddleLeft" SizeF="92.7158051,22.9999771" LocationFloat="213.333389,70.86179" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="170" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[SEMESTER_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="171" UseFont="false" UseTextAlignment="false" />
+        </Item29>
+        <Item30 Ref="172" ControlType="XRLabel" Name="label58" Multiline="true" Text="Semester" TextAlignment="MiddleLeft" SizeF="63.7404938,22.9999619" LocationFloat="149.5929,70.86182" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="173" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item30>
+        <Item31 Ref="174" ControlType="XRLabel" Name="label55" Multiline="true" Text="label5" TextAlignment="MiddleLeft" SizeF="216.35968,22.9999771" LocationFloat="89.68511,93.86152" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="175" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[SMS_MOBILE_NUM]" />
+          </ExpressionBindings>
+          <StylePriority Ref="176" UseFont="false" UseTextAlignment="false" />
+        </Item31>
+        <Item32 Ref="177" ControlType="XRLabel" Name="label56" Multiline="true" Text="Phone" TextAlignment="MiddleLeft" SizeF="67.49988,22.9999619" LocationFloat="22.1850071,93.86129" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="178" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item32>
+        <Item33 Ref="179" ControlType="XRLabel" Name="label48" Multiline="true" Text="Year" TextAlignment="MiddleLeft" SizeF="67.49988,22.9999619" LocationFloat="22.18536,70.8615646" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="180" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item33>
+        <Item34 Ref="181" ControlType="XRLabel" Name="label49" Multiline="true" TextAlignment="MiddleLeft" SizeF="59.9074326,22.9999771" LocationFloat="89.68546,70.86179" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="182" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[YEAR_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="183" UseFont="false" UseTextAlignment="false" />
+        </Item34>
+        <Item35 Ref="184" ControlType="XRLabel" Name="label12" Multiline="true" Text="Name       " TextAlignment="MiddleLeft" SizeF="67.49999,22.9999847" LocationFloat="22.18525,1.86157227" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="185" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item35>
+        <Item36 Ref="186" ControlType="XRLabel" Name="label13" Multiline="true" Text="label18" TextAlignment="MiddleLeft" SizeF="216.35968,23.0000153" LocationFloat="89.6852341,1.86152136" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="187" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[STUDENT_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="188" UseFont="false" UseTextAlignment="false" />
+        </Item36>
+        <Item37 Ref="189" ControlType="XRLabel" Name="label14" Multiline="true" Text="Std ID        " TextAlignment="MiddleLeft" SizeF="67.49998,23.0000153" LocationFloat="22.1851215,24.8615513" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="190" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item37>
+        <Item38 Ref="191" ControlType="XRLabel" Name="label15" Multiline="true" Text="label5" TextAlignment="MiddleLeft" SizeF="216.35968,22.9999771" LocationFloat="89.6852341,47.8618126" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="192" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[CLASS_NAME]" />
+          </ExpressionBindings>
+          <StylePriority Ref="193" UseFont="false" UseTextAlignment="false" />
+        </Item38>
+        <Item39 Ref="194" ControlType="XRLabel" Name="label16" Multiline="true" Text="Class          " TextAlignment="MiddleLeft" SizeF="67.49988,22.9999619" LocationFloat="22.1851215,47.8616066" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="195" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item39>
+        <Item40 Ref="196" ControlType="XRLabel" Name="label17" Multiline="true" Text="Session   " TextAlignment="MiddleLeft" SizeF="66.24133,22.9999619" LocationFloat="162.926178,24.8615513" Font="Microsoft Sans Serif, 8pt, style=Bold" ForeColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="197" UseFont="false" UseForeColor="false" UseTextAlignment="false" />
+        </Item40>
+        <Item41 Ref="198" ControlType="XRLabel" Name="label18" Multiline="true" Text="label17" TextAlignment="MiddleLeft" SizeF="76.87726,22.99997" LocationFloat="229.167526,24.86173" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="199" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[SESSION_NAME_2]" />
+          </ExpressionBindings>
+          <StylePriority Ref="200" UseFont="false" UseTextAlignment="false" />
+        </Item41>
+        <Item42 Ref="201" ControlType="XRLabel" Name="label21" Multiline="true" Text="label3" TextAlignment="MiddleLeft" SizeF="73.24097,23.0000076" LocationFloat="89.6852341,24.8618069" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="202" EventName="BeforePrint" PropertyName="Text" Expression="[EMS_DPG_EMS_BILL_GEN_PROCESS_DPD_EMS_STUDENT_LST].[STUDENT_CODE]" />
+          </ExpressionBindings>
+          <StylePriority Ref="203" UseFont="false" UseTextAlignment="false" />
+        </Item42>
+      </Controls>
+    </Item3>
+    <Item4 Ref="204" ControlType="GroupHeaderBand" Name="GroupHeader1" GroupUnion="WithFirstDetail" HeightF="20.0000515">
+      <Controls>
+        <Item1 Ref="205" ControlType="XRTable" Name="table5" SizeF="285.957825,20" LocationFloat="778.6403,0" Font="Arial, 8pt">
+          <Rows>
+            <Item1 Ref="206" ControlType="XRTableRow" Name="tableRow5" Weight="1">
+              <Cells>
+                <Item1 Ref="207" ControlType="XRTableCell" Name="tableCell7" Weight="0.27408154164356213" Text="Fee Description" TextAlignment="MiddleCenter" StyleName="DetailCaption1" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <StylePriority Ref="208" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item1>
+                <Item2 Ref="209" ControlType="XRTableCell" Name="tableCell10" Weight="0.10077804561258501" Multiline="true" Text="Amount" TextAlignment="MiddleRight" StyleName="DetailCaption1" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <StylePriority Ref="210" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item2>
+              </Cells>
+            </Item1>
+          </Rows>
+          <StylePriority Ref="211" UseFont="false" />
+        </Item1>
+        <Item2 Ref="212" ControlType="XRTable" Name="table3" SizeF="284.483856,20" LocationFloat="397.6597,5.086263E-05" Font="Arial, 8pt">
+          <Rows>
+            <Item1 Ref="213" ControlType="XRTableRow" Name="tableRow3" Weight="1">
+              <Cells>
+                <Item1 Ref="214" ControlType="XRTableCell" Name="tableCell1" Weight="0.264702867620901" Text="Fee Description" TextAlignment="MiddleCenter" StyleName="DetailCaption1" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <StylePriority Ref="215" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item1>
+                <Item2 Ref="216" ControlType="XRTableCell" Name="tableCell2" Weight="0.0972244559522171" Multiline="true" Text="Amount" TextAlignment="MiddleRight" StyleName="DetailCaption1" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <StylePriority Ref="217" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item2>
+              </Cells>
+            </Item1>
+          </Rows>
+          <StylePriority Ref="218" UseFont="false" />
+        </Item2>
+        <Item3 Ref="219" ControlType="XRTable" Name="table1" SizeF="284.54,20" LocationFloat="21.5092087,0" Font="Arial, 8pt">
+          <Rows>
+            <Item1 Ref="220" ControlType="XRTableRow" Name="tableRow1" Weight="1">
+              <Cells>
+                <Item1 Ref="221" ControlType="XRTableCell" Name="tableCell3" Weight="0.25997204962955572" Text="Fee Description" TextAlignment="MiddleCenter" StyleName="DetailCaption1" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <StylePriority Ref="222" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item1>
+                <Item2 Ref="223" ControlType="XRTableCell" Name="tableCell4" Weight="0.0906955032914571" Multiline="true" Text="Amount" TextAlignment="MiddleRight" StyleName="DetailCaption1" Font="Microsoft Sans Serif, 9pt, style=Bold" ForeColor="Black" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1">
+                  <StylePriority Ref="224" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+                </Item2>
+              </Cells>
+            </Item1>
+          </Rows>
+          <StylePriority Ref="225" UseFont="false" />
+        </Item3>
+      </Controls>
+    </Item4>
+    <Item5 Ref="226" ControlType="DetailBand" Name="Detail" HeightF="22.93223">
+      <Controls>
+        <Item1 Ref="227" ControlType="XRTable" Name="table6" SizeF="285.9574,20" LocationFloat="778.6403,0" OddStyleName="DetailData3_Odd" Font="Arial, 7.8pt, charSet=0" BorderColor="DarkGray" Borders="All" BorderDashStyle="Solid">
+          <Rows>
+            <Item1 Ref="228" ControlType="XRTableRow" Name="tableRow6" Weight="11.5">
+              <Cells>
+                <Item1 Ref="229" ControlType="XRTableCell" Name="tableCell11" Weight="0.2816447542165203" TextAlignment="MiddleLeft" StyleName="DetailData1" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1" BorderDashStyle="Solid">
+                  <ExpressionBindings>
+                    <Item1 Ref="230" EventName="BeforePrint" PropertyName="Text" Expression="[FEE_DESC]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="231" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseBorderDashStyle="false" UseTextAlignment="false" />
+                </Item1>
+                <Item2 Ref="232" ControlType="XRTableCell" Name="tableCell12" Weight="0.10355828237941944" Multiline="true" Text="tableCell9" TextAlignment="MiddleRight" StyleName="DetailData1" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1" BorderDashStyle="Solid">
+                  <ExpressionBindings>
+                    <Item1 Ref="233" EventName="BeforePrint" PropertyName="Text" Expression="[AMOUNT]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="234" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseBorderDashStyle="false" UseTextAlignment="false" />
+                </Item2>
+              </Cells>
+            </Item1>
+          </Rows>
+          <StylePriority Ref="235" UseFont="false" UseBorderColor="false" UseBorders="false" UseBorderDashStyle="false" />
+        </Item1>
+        <Item2 Ref="236" ControlType="XRTable" Name="table4" SizeF="284.483734,20" LocationFloat="397.6597,0" OddStyleName="DetailData3_Odd" Font="Arial, 8pt" BorderColor="DarkGray" Borders="All" BorderDashStyle="Solid">
+          <Rows>
+            <Item1 Ref="237" ControlType="XRTableRow" Name="tableRow4" Weight="11.5">
+              <Cells>
+                <Item1 Ref="238" ControlType="XRTableCell" Name="tableCell5" Weight="0.28123221865543652" TextAlignment="MiddleLeft" StyleName="DetailData1" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1" BorderDashStyle="Solid">
+                  <ExpressionBindings>
+                    <Item1 Ref="239" EventName="BeforePrint" PropertyName="Text" Expression="[FEE_DESC]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="240" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseBorderDashStyle="false" UseTextAlignment="false" />
+                </Item1>
+                <Item2 Ref="241" ControlType="XRTableCell" Name="tableCell6" Weight="0.1030823213455013" Multiline="true" Text="tableCell9" TextAlignment="MiddleRight" StyleName="DetailData1" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1" BorderDashStyle="Solid">
+                  <ExpressionBindings>
+                    <Item1 Ref="242" EventName="BeforePrint" PropertyName="Text" Expression="[AMOUNT]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="243" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseBorderDashStyle="false" UseTextAlignment="false" />
+                </Item2>
+              </Cells>
+            </Item1>
+          </Rows>
+          <StylePriority Ref="244" UseFont="false" UseBorderColor="false" UseBorders="false" UseBorderDashStyle="false" />
+        </Item2>
+        <Item3 Ref="245" ControlType="XRTable" Name="table2" SizeF="284.535583,20" LocationFloat="21.5092144,0" OddStyleName="DetailData3_Odd" Font="Arial, 8pt" BorderColor="DarkGray" Borders="All" BorderDashStyle="Solid">
+          <Rows>
+            <Item1 Ref="246" ControlType="XRTableRow" Name="tableRow2" Weight="11.5">
+              <Cells>
+                <Item1 Ref="247" ControlType="XRTableCell" Name="tableCell8" Weight="0.23786210977929032" TextAlignment="MiddleLeft" StyleName="DetailData1" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1" BorderDashStyle="Solid">
+                  <ExpressionBindings>
+                    <Item1 Ref="248" EventName="BeforePrint" PropertyName="Text" Expression="[FEE_DESC]" />
+                    <Item2 Ref="249" EventName="BeforePrint" PropertyName="Visible" Expression="[AMOUNT] !=0" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="250" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseBorderDashStyle="false" UseTextAlignment="false" />
+                </Item1>
+                <Item2 Ref="251" ControlType="XRTableCell" Name="tableCell9" Weight="0.082982086732230981" Multiline="true" Text="tableCell9" TextAlignment="MiddleRight" StyleName="DetailData1" BackColor="Transparent" BorderColor="Gainsboro" Borders="All" BorderWidth="1" BorderDashStyle="Solid">
+                  <ExpressionBindings>
+                    <Item1 Ref="252" EventName="BeforePrint" PropertyName="Text" Expression="[AMOUNT]" />
+                    <Item2 Ref="253" EventName="BeforePrint" PropertyName="Visible" Expression="[AMOUNT] !=0" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="254" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseBorderDashStyle="false" UseTextAlignment="false" />
+                </Item2>
+              </Cells>
+            </Item1>
+          </Rows>
+          <StylePriority Ref="255" UseFont="false" UseBorderColor="false" UseBorders="false" UseBorderDashStyle="false" />
+        </Item3>
+      </Controls>
+      <ExpressionBindings>
+        <Item1 Ref="256" EventName="BeforePrint" PropertyName="Visible" Expression="[AMOUNT] !=0" />
+      </ExpressionBindings>
+    </Item5>
+    <Item6 Ref="257" ControlType="GroupFooterBand" Name="GroupFooter2" Level="1" HeightF="70.40461">
+      <Controls>
+        <Item1 Ref="258" ControlType="XRLabel" Name="label81" Multiline="true" Text="label19" TextAlignment="MiddleLeft" SizeF="305.6133,48.10135" LocationFloat="779.316467,19.8332729" Font="Microsoft Sans Serif, 11pt, style=Bold" BackColor="Transparent" Padding="2,2,0,0,100" BorderColor="Gainsboro" Borders="None">
+          <Scripts Ref="259" OnPrintOnPage="label78_PrintOnPage" />
+          <Summary Ref="260" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="261" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([AMOUNT])" />
+          </ExpressionBindings>
+          <StylePriority Ref="262" UseFont="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="263" ControlType="XRLabel" Name="label80" Multiline="true" Text="label19" TextAlignment="MiddleLeft" SizeF="305.6133,48.10135" LocationFloat="398.283539,19.8332748" Font="Microsoft Sans Serif, 11pt, style=Bold" BackColor="Transparent" Padding="2,2,0,0,100" BorderColor="Gainsboro" Borders="None">
+          <Scripts Ref="264" OnPrintOnPage="label78_PrintOnPage" />
+          <Summary Ref="265" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="266" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([AMOUNT]&#xA;) " />
+          </ExpressionBindings>
+          <StylePriority Ref="267" UseFont="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="268" ControlType="XRLabel" Name="label36" Multiline="true" Text="Total Collected Amount" TextAlignment="MiddleLeft" SizeF="208.404175,19.8332729" LocationFloat="779.316467,0" Font="Bahnschrift SemiLight, 11pt, style=Bold" ForeColor="Black" BackColor="Transparent" Padding="2,2,0,0,100" BorderColor="Gainsboro" Borders="All">
+          <StylePriority Ref="269" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="270" ControlType="XRLabel" Name="label37" Multiline="true" Text="label19" TextAlignment="MiddleRight" SizeF="75.63452,19.8332729" LocationFloat="987.720642,0" Font="Arial, 9.75pt, style=Bold" Padding="2,2,0,0,100" BorderColor="Gainsboro" Borders="All">
+          <Summary Ref="271" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="272" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([AMOUNT])" />
+          </ExpressionBindings>
+          <StylePriority Ref="273" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="274" ControlType="XRLabel" Name="label29" Multiline="true" Text="Total Collected Amount" TextAlignment="MiddleLeft" SizeF="207.606354,19.8332729" LocationFloat="397.6597,1.90734863E-06" Font="Bahnschrift SemiLight, 11pt, style=Bold" ForeColor="Black" BackColor="Transparent" Padding="2,2,0,0,100" BorderColor="Gainsboro" Borders="All">
+          <StylePriority Ref="275" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="276" ControlType="XRLabel" Name="label28" Multiline="true" Text="label19" TextAlignment="MiddleRight" SizeF="76.8775,19.8332729" LocationFloat="605.266052,1.90734863E-06" Font="Arial, 9.75pt, style=Bold" Padding="2,2,0,0,100" BorderColor="Gainsboro" Borders="All">
+          <Summary Ref="277" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="278" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([AMOUNT])" />
+          </ExpressionBindings>
+          <StylePriority Ref="279" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="280" ControlType="XRLabel" Name="label43" Multiline="true" Text="Total Collected Amount" TextAlignment="MiddleLeft" SizeF="210.26825,19.8332729" LocationFloat="22.1852627,0" Font="Bahnschrift SemiLight, 11pt, style=Bold" ForeColor="Black" BackColor="Transparent" Padding="2,2,0,0,100" BorderColor="Gainsboro" Borders="All">
+          <StylePriority Ref="281" UseFont="false" UseForeColor="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item7>
+        <Item8 Ref="282" ControlType="XRLabel" Name="label42" Multiline="true" Text="label19" TextAlignment="MiddleRight" SizeF="73.59143,19.8332748" LocationFloat="232.453491,0" Font="Arial, 9.75pt, style=Bold" Padding="2,2,0,0,100" BorderColor="Gainsboro" Borders="All">
+          <Summary Ref="283" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="284" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([AMOUNT])&#xA;" />
+          </ExpressionBindings>
+          <StylePriority Ref="285" UseFont="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item8>
+        <Item9 Ref="286" ControlType="XRLabel" Name="label78" Multiline="true" Text="label19" TextAlignment="MiddleLeft" SizeF="305.6133,48.10135" LocationFloat="22.1853638,19.8332729" Font="Microsoft Sans Serif, 11pt, style=Bold" BackColor="Transparent" Padding="2,2,0,0,100" BorderColor="Gainsboro" Borders="None">
+          <Scripts Ref="287" OnPrintOnPage="label78_PrintOnPage" />
+          <Summary Ref="288" Running="Report" />
+          <ExpressionBindings>
+            <Item1 Ref="289" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([AMOUNT]) " />
+          </ExpressionBindings>
+          <StylePriority Ref="290" UseFont="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item9>
+      </Controls>
+    </Item6>
+  </Bands>
+  <CrossBandControls>
+    <Item1 Ref="291" ControlType="XRCrossBandLine" Name="crossBandLine2" LineStyle="Dash" WidthF="1.000061" StartBand="#Ref-8" EndBand="#Ref-79" StartPointFloat="731.4043,0" EndPointFloat="731.4043,83.00002" ForeColor="DarkGray" />
+    <Item2 Ref="292" ControlType="XRCrossBandLine" Name="crossBandLine1" LineStyle="Dash" WidthF="1" StartBand="#Ref-8" EndBand="#Ref-79" StartPointFloat="356.3333,0" EndPointFloat="356.3333,83.00002" ForeColor="DarkGray" />
+  </CrossBandControls>
+  <StyleSheet>
+    <Item1 Ref="293" Name="Title" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 14.25pt" ForeColor="255,75,75,75" BackColor="Transparent" BorderColor="Black" Sides="None" StringFormat="Near;Near;0;None;Character;Default" BorderWidthSerializable="1" />
+    <Item2 Ref="294" Name="DetailCaption1" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt, style=Bold" ForeColor="White" BackColor="255,75,75,75" BorderColor="White" Sides="Left" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item3 Ref="295" Name="DetailData1" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt" ForeColor="Black" BorderColor="Transparent" Sides="Left" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item4 Ref="296" Name="DetailData3_Odd" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt" ForeColor="Black" BackColor="255,231,231,231" BorderColor="Transparent" Sides="None" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+    <Item5 Ref="297" Name="PageInfo" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt, style=Bold" ForeColor="255,75,75,75" StringFormat="Near;Near;0;None;Character;Default" />
+  </StyleSheet>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.v21.1" Name="sqlDataSource1" Base64="PFNxbERhdGFTb3VyY2UgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxDb25uZWN0aW9uIE5hbWU9IkRldlJlcG9ydENvbm5lY3Rpb24iIEZyb21BcHBDb25maWc9InRydWUiIC8+PFF1ZXJ5IFR5cGU9IlN0b3JlZFByb2NRdWVyeSIgTmFtZT0iRU1TX0RQR19FTVNfQklMTF9DT0xMX1BST0NFU1NfRFBEX0JJTExfQ09MTEVDVElPTl9EVEwiPjxQYXJhbWV0ZXIgTmFtZT0iUF9PUkdfQ09ERSIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/T1JHX0NPREUpPC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBOYW1lPSJQX1NUVURFTlRfQ09ERSIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/U1RVREVOVF9DT0RFKTwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgTmFtZT0iUF9DT0xMRUNUSU9OX0lEIiBUeXBlPSJEZXZFeHByZXNzLkRhdGFBY2Nlc3MuRXhwcmVzc2lvbiI+KFN5c3RlbS5TdHJpbmcpKD9DT0xMRUNUSU9OX0lEKTwvUGFyYW1ldGVyPjxQcm9jTmFtZT4iRU1TIi4iRFBHX0VNU19CSUxMX0NPTExfUFJPQ0VTUyIuIkRQRF9CSUxMX0NPTExFQ1RJT05fRFRMIjwvUHJvY05hbWU+PC9RdWVyeT48UXVlcnkgVHlwZT0iU3RvcmVkUHJvY1F1ZXJ5IiBOYW1lPSJFTVNfRFBHX0VNU19CSUxMX0NPTExfUFJPQ0VTU19EUERfT1JHX0xTVCI+PFBhcmFtZXRlciBOYW1lPSJQX1VTRVJfSUQiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP1VTRVJfQ09ERSk8L1BhcmFtZXRlcj48UHJvY05hbWU+IkVNUyIuIkRQR19FTVNfQklMTF9DT0xMX1BST0NFU1MiLiJEUERfT1JHX0xTVCI8L1Byb2NOYW1lPjwvUXVlcnk+PFF1ZXJ5IFR5cGU9IlN0b3JlZFByb2NRdWVyeSIgTmFtZT0iRU1TX0RQR19FTVNfQklMTF9HRU5fUFJPQ0VTU19EUERfRU1TX1NUVURFTlRfTFNUIj48UGFyYW1ldGVyIE5hbWU9IlBfT1JHX0NPREUiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP09SR19DT0RFKTwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgTmFtZT0iUF9TVFVERU5UX0NPREUiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP1NUVURFTlRfQ09ERSk8L1BhcmFtZXRlcj48UHJvY05hbWU+IkVNUyIuIkRQR19FTVNfQklMTF9HRU5fUFJPQ0VTUyIuIkRQRF9FTVNfU1RVREVOVF9MU1QiPC9Qcm9jTmFtZT48L1F1ZXJ5PjxRdWVyeSBUeXBlPSJTdG9yZWRQcm9jUXVlcnkiIE5hbWU9IkVNU19EUEdfRU1TX0JJTExfR0VOX1BST0NFU1NfRFBEX09SR19JTUFHRSI+PFBhcmFtZXRlciBOYW1lPSJQX09SR19DT0RFIiBUeXBlPSJEZXZFeHByZXNzLkRhdGFBY2Nlc3MuRXhwcmVzc2lvbiI+KFN5c3RlbS5TdHJpbmcpKD9PUkdfQ09ERSk8L1BhcmFtZXRlcj48UHJvY05hbWU+IkVNUyIuIkRQR19FTVNfQklMTF9HRU5fUFJPQ0VTUyIuIkRQRF9PUkdfSU1BR0UiPC9Qcm9jTmFtZT48L1F1ZXJ5PjxRdWVyeSBUeXBlPSJTdG9yZWRQcm9jUXVlcnkiIE5hbWU9IkRQR19FTVNfQklMTF9DT0xMX1BST0NFU1NfRFBEX0JJTExfU1VTUEFOU0VfQU1PVU5UIj48UGFyYW1ldGVyIE5hbWU9IlBfT1JHX0NPREUiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP09SR19DT0RFKTwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgTmFtZT0iUF9TVFVERU5UX0NPREUiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLlN0cmluZykoP1NUVURFTlRfQ09ERSk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IlBfQ09MTEVDVElPTl9JRCIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uU3RyaW5nKSg/Q09MTEVDVElPTl9JRCk8L1BhcmFtZXRlcj48UHJvY05hbWU+IkRQR19FTVNfQklMTF9DT0xMX1BST0NFU1MiLiJEUERfQklMTF9TVVNQQU5TRV9BTU9VTlQiPC9Qcm9jTmFtZT48L1F1ZXJ5PjxSZXN1bHRTY2hlbWE+PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IkVNU19EUEdfRU1TX0JJTExfQ09MTF9QUk9DRVNTX0RQRF9CSUxMX0NPTExFQ1RJT05fRFRMIj48RmllbGQgTmFtZT0iVFJBTlNfSUQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVFJBTlNfREFURSIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IlRSQU5TX1RZUEVfQ09ERSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUUkFOU19UWVBFX0RFU0MiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRkVFX0NPREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRkVFX0RFU0MiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQU1PVU5UIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJWT1VDSF9EQVRFIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iVk9VQ0hfTk8iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUkVNQVJLUyIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48VmlldyBOYW1lPSJFTVNfRFBHX0VNU19CSUxMX0dFTl9QUk9DRVNTX0RQRF9FTVNfU1RVREVOVF9MU1QiPjxGaWVsZCBOYW1lPSJTVFVERU5UX0lEIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJTVFVERU5UX0NPREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU1RVREVOVF9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNBTVBVU19OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlZFUlNJT05fTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTSElGVF9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNMQVNTX05BTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0VDVElPTl9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkdST1VQX05BTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0VTU0lPTl9OQU1FXzIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU1RBUlRfU0VTU0lPTl9DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNVUl9TRVNTSU9OX0NPREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iWUVBUl9OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNFTUVTVEVSX05BTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU01TX01PQklMRV9OVU0iIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iRU1TX0RQR19FTVNfQklMTF9HRU5fUFJPQ0VTU19EUERfT1JHX0lNQUdFIj48RmllbGQgTmFtZT0iT1JHX0NPREUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iT1JHX05BTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iT1JHX0lNQUdFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFERFIxIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFERFIyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlJFR19OVU0iIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iRFBHX0VNU19CSUxMX0NPTExfUFJPQ0VTU19EUERfQklMTF9TVVNQQU5TRV9BTU9VTlQiPjxGaWVsZCBOYW1lPSJUUkFOU19JRCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUUkFOU19EQVRFIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iVFJBTlNfVFlQRV9DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkZFRV9DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFNT1VOVCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iVk9VQ0hfREFURSIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IlZPVUNIX05PIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlJFTUFSS1MiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRkVFX0RFU0MiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iRU1TX0RQR19FTVNfQklMTF9DT0xMX1BST0NFU1NfRFBEX09SR19MU1QiPjxGaWVsZCBOYW1lPSJPUkdfQ09ERSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJPUkdfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+PC9SZXN1bHRTY2hlbWE+PENvbm5lY3Rpb25PcHRpb25zIENsb3NlQ29ubmVjdGlvbj0idHJ1ZSIgLz48L1NxbERhdGFTb3VyY2U+" />
+  </ComponentStorage>
+</XtraReportsLayoutSerializer>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="21.1.5.0" Ref="0" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="AllExamRoutineReport" VerticalContentSplitting="Smart" HorizontalContentSplitting="Smart" PageWidth="850" PageHeight="1100" Version="21.1" Font="Arial, 9.75pt">
+  <Extensions>
+    <Item1 Ref="1" Key="VSReportExtInfo" Value=".vsrepx" />
+  </Extensions>
+  <Parameters>
+    <Item1 Ref="3" Name="ORG_CODE" />
+    <Item2 Ref="5" ValueInfo="0" Name="TERM_ID" Type="#Ref-4" />
+  </Parameters>
+  <Bands>
+    <Item1 Ref="6" ControlType="ReportHeaderBand" Name="ReportHeader" HeightF="30.0130157">
+      <Controls>
+        <Item1 Ref="7" ControlType="XRLabel" Name="label1" Text="AllExamRoutineReport" SizeF="256.893036,30.0130157" LocationFloat="0,0" StyleName="TitleStyle" />
+      </Controls>
+    </Item1>
+    <Item2 Ref="8" ControlType="DetailBand" Name="Detail" HeightF="119.5">
+      <Controls>
+        <Item1 Ref="10" ControlType="XRCrossTab" Name="crossTab1" GeneralStyleName="crossTabGeneralStyle" DataAreaStyleName="crossTabDataStyle" HeaderAreaStyleName="crossTabHeaderStyle" TotalAreaStyleName="crossTabTotalStyle" DataSource="#Ref-9" DataMember="EMS_DPG_EXAM_ROUTINE_DPD_EXAM_ROUTINE_GRID_ALL" SizeF="452.8333,62" LocationFloat="0,0">
+          <RowFields>
+            <Item1 Ref="11" FieldName="EXAM_DATE" />
+          </RowFields>
+          <ColumnFields>
+            <Item1 Ref="12" FieldName="CLASS_NAME" />
+          </ColumnFields>
+          <DataFields>
+            <Item1 Ref="13" FieldName="SUBJECT_NAME" />
+          </DataFields>
+          <ColumnDefinitions>
+            <Item1 Ref="14" Width="149.166672" />
+            <Item2 Ref="15" Width="301.666656" />
+            <Item3 Ref="16" Width="2" />
+          </ColumnDefinitions>
+          <RowDefinitions>
+            <Item1 Ref="17" Height="35" />
+            <Item2 Ref="18" Height="25" />
+            <Item3 Ref="19" Height="2" />
+          </RowDefinitions>
+          <Cells>
+            <Item1 Ref="20" ControlType="XRCrossTabCell" Name="crossTabCell1" ColumnIndex="0" RowIndex="0" Text="EXAM_DATE" />
+            <Item2 Ref="21" ControlType="XRCrossTabCell" Name="crossTabCell2" ColumnIndex="1" RowIndex="1" TextAlignment="MiddleLeft" />
+            <Item3 Ref="22" ControlType="XRCrossTabCell" Name="crossTabCell3" ColumnIndex="1" RowIndex="0" />
+            <Item4 Ref="23" ControlType="XRCrossTabCell" Name="crossTabCell4" ColumnIndex="0" RowIndex="1" />
+            <Item5 Ref="24" ControlType="XRCrossTabCell" Name="crossTabHeaderCell1" ColumnIndex="2" RowIndex="0" Text="Grand Total" />
+            <Item6 Ref="25" ControlType="XRCrossTabCell" Name="crossTabTotalCell1" ColumnIndex="2" RowIndex="1" />
+            <Item7 Ref="26" ControlType="XRCrossTabCell" Name="crossTabHeaderCell2" ColumnIndex="0" RowIndex="2" Text="Grand Total" />
+            <Item8 Ref="27" ControlType="XRCrossTabCell" Name="crossTabTotalCell2" ColumnIndex="1" RowIndex="2" />
+            <Item9 Ref="28" ControlType="XRCrossTabCell" Name="crossTabTotalCell3" ColumnIndex="2" RowIndex="2" />
+          </Cells>
+        </Item1>
+      </Controls>
+    </Item2>
+    <Item3 Ref="29" ControlType="TopMarginBand" Name="TopMargin" />
+    <Item4 Ref="30" ControlType="BottomMarginBand" Name="BottomMargin" />
+  </Bands>
+  <StyleSheet>
+    <Item1 Ref="31" Name="TitleStyle" BorderStyle="Inset" Padding="2,2,0,0,100" Font="Arial, 18pt" StringFormat="Near;Near;0;None;Character;Default" />
+    <Item2 Ref="32" Name="crossTabGeneralStyle" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 9.75pt" BorderColor="255,230,232,234" Sides="All" StringFormat="Near;Near;0;None;Character;Default" BorderWidthSerializable="1" />
+    <Item3 Ref="33" Name="crossTabHeaderStyle" BorderStyle="Inset" Font="Arial, 9.75pt, style=Bold" BackColor="255,250,251,252" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" />
+    <Item4 Ref="34" Name="crossTabDataStyle" BorderStyle="Inset" StringFormat="Far;Center;0;None;Character;Default" TextAlignment="MiddleRight" />
+    <Item5 Ref="35" Name="crossTabTotalStyle" BorderStyle="Inset" Font="Arial, 9.75pt, style=Bold" BackColor="255,226,242,255" StringFormat="Far;Center;0;None;Character;Default" TextAlignment="MiddleRight" />
+  </StyleSheet>
+  <ComponentStorage>
+    <Item1 Ref="9" ObjectType="DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.v21.1" Name="sqlDataSource1" Base64="PFNxbERhdGFTb3VyY2UgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxDb25uZWN0aW9uIE5hbWU9IkRldlJlcG9ydENvbm5lY3Rpb24iIEZyb21BcHBDb25maWc9InRydWUiIC8+PFF1ZXJ5IFR5cGU9IlN0b3JlZFByb2NRdWVyeSIgTmFtZT0iRU1TX0RQR19FWEFNX1JPVVRJTkVfRFBEX0VYQU1fUk9VVElORV9HUklEX0FMTCI+PFBhcmFtZXRlciBOYW1lPSJQX09SR19DT0RFIiBUeXBlPSJEZXZFeHByZXNzLkRhdGFBY2Nlc3MuRXhwcmVzc2lvbiI+KFN5c3RlbS5TdHJpbmcpKD9PUkdfQ09ERSk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIE5hbWU9IlBfVEVSTV9JRCIgVHlwZT0iRGV2RXhwcmVzcy5EYXRhQWNjZXNzLkV4cHJlc3Npb24iPihTeXN0ZW0uRGVjaW1hbCkoP1RFUk1fSUQpPC9QYXJhbWV0ZXI+PFByb2NOYW1lPiJFTVMiLiJEUEdfRVhBTV9ST1VUSU5FIi4iRFBEX0VYQU1fUk9VVElORV9HUklEX0FMTCI8L1Byb2NOYW1lPjwvUXVlcnk+PFJlc3VsdFNjaGVtYT48RGF0YVNldCBOYW1lPSJzcWxEYXRhU291cmNlMSI+PFZpZXcgTmFtZT0iRU1TX0RQR19FWEFNX1JPVVRJTkVfRFBEX0VYQU1fUk9VVElORV9HUklEX0FMTCI+PEZpZWxkIE5hbWU9Ik9SR19DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRFUk1fSUQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlRFUk1fREVTQ1JJUFRJT04iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ0xBU1NfQ09ERSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDTEFTU19OQU1FIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkVYQU1fREFURSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJFWEFNX1RJTUUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRFVSQVRJT04iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU1VCSkVDVF9DT0RFIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNVQkpFQ1RfTkFNRSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+PC9SZXN1bHRTY2hlbWE+PENvbm5lY3Rpb25PcHRpb25zIENsb3NlQ29ubmVjdGlvbj0idHJ1ZSIgLz48L1NxbERhdGFTb3VyY2U+" />
+  </ComponentStorage>
+  <ObjectStorage>
+    <Item1 ObjectType="DevExpress.XtraReports.Serialization.ObjectStorageInfo, DevExpress.XtraReports.v21.1" Ref="4" Content="System.Decimal" Type="System.Type" />
+  </ObjectStorage>
+</XtraReportsLayoutSerializer>
