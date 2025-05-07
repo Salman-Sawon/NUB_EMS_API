@@ -19,5 +19,8 @@ namespace StudentWebAPI.Service
         List<ActiveTeacherData> GetActiveTeacherList(string ORG_CODE);
         public List<RoomInfoVM> getRoomInfo(string ORG_CODE);
        public (int status, string[] message) saveRoomMst(RoomMst roomMst);
+        public List<getBuildingList> getBuildingList(string ORG_CODE, string CAMPUS_CODE);
+        public List<ResultSubjectListViewModel> GetResultSubjectList(string organizationCode);
+        (int status, string[] message) SaveSubjectCreation(SubjectInfoMst subjectInfo);
     }
 }

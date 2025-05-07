@@ -93,6 +93,49 @@ namespace StudentWebAPI.Controllers
             responseMessage.Message = statusAndMessage.message[0];
             return Ok(responseMessage);
         }
+        [HttpGet]
+        [Route("getBuildingList")]
+        public IActionResult getBuildingList([FromQuery] string ORG_CODE, string CAMPUS_CODE)
+        {
+
+            List<getBuildingList> buildingList = teacher.getBuildingList(ORG_CODE, CAMPUS_CODE);
+            ResponseMessage responseMessage = new ResponseMessage();
+            responseMessage.StatusCode = 1;
+            responseMessage.data = "Room Info Data";
+            responseMessage.Message = "Room List";
+            responseMessage.ResponseObj = buildingList;
+            return Ok(responseMessage);
+        }
+
+        [HttpGet]
+        [Route("GetResultSubjectList")]
+        public IActionResult GetResultSubjectList(string organizationCode)
+        {
+            List<ResultSubjectListViewModel> subjectList = teacher.GetResultSubjectList(organizationCode);
+            ResponseMessage responseMessage = new ResponseMessage();
+            responseMessage.StatusCode = 1;
+            responseMessage.Message = "Subject List";
+            responseMessage.ResponseObj = subjectList;
+            return Ok(responseMessage);
+        }
+
+
+
+        [HttpPost]
+        [Route("SaveSubjectCreation")]
+        public IActionResult SaveSubjectCreation([FromBody] RequestMessage requestObject)
+        {
+            SubjectInfoMst subjectInfo = new SubjectInfoMst();
+            string jsonResponse = Convert.ToString(requestObject.RequestObject);
+            subjectInfo = JsonConvert.DeserializeObject<SubjectInfoMst>(jsonResponse);
+
+            var statusAndMessage = teacher.SaveSubjectCreation(subjectInfo);
+
+            ResponseMessage responseMessage = new ResponseMessage();
+            responseMessage.StatusCode = statusAndMessage.status;
+            responseMessage.Message = statusAndMessage.message[0];
+            return Ok(responseMessage);
+        }
 
     }
 }

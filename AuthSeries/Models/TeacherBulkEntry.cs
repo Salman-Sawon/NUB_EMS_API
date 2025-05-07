@@ -41,5 +41,35 @@ namespace StudentWebAPI.Models
 
 
     }
+
+    public class ResultSubjectListViewModel
+    {
+
+        public Int16 SUBJECT_ID { get; set; }
+        public string SUBJECT_CODE { get; set; }
+        public string SUBJECT_NAME { get; set; }
+        public string SUBJECT_NAME_BANGLA { get; set; }
+        public string SUBJECT_SHORT_NAME { get; set; }
+        public string SUBJECT_PART { get; set; }
+        public string SUBJECT_DEFAULT_TYPE { get; set; }
+        public string SUJBECT_IS_PRACTICAL { get; set; }
+        public Int16 SUJBECT_SRLNO { get; set; }
+    }
+
+    public class SubjectInfoMst
+    {
+        //  public List<decimal> SUBJECT_ID { get; set; }
+        public List<string> SUBJECT_CODE { get; set; }
+        public List<string> SUBJECT_NAME { get; set; }
+        public List<string> SUBJECT_NAME_BANGLA { get; set; }
+        public List<string> SUBJECT_SHORT_NAME { get; set; }
+        public List<string> SUBJECT_PART { get; set; }
+        public List<string> SUBJECT_DEFAULT_TYPE { get; set; }
+        public List<string> SUJBECT_IS_PRACTICAL { get; set; }
+        public List<decimal> SUJBECT_SRLNO { get; set; }
+        //public List<decimal> RowStatus { get; set; }
+        public string ORG_CODE { get; set; }
+        public string User_Name { get; set; }
+    }
 }
 
